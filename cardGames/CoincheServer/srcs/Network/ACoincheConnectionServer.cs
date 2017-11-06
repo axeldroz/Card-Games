@@ -8,9 +8,12 @@ namespace CoincheServer.NetworkServer
 {
     public abstract class ACoincheConnectionServer
     {
-        public ACoincheConnectionServer()
+        private string ip;
+        private int port;
+        public ACoincheConnectionServer(string _ip, int _port)
         {
-
+            this.ip = _ip;
+            this.port = _port;
         }
     }
 }

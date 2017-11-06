@@ -59,7 +59,9 @@
     <Compile Include="srcs\IO\InputManager.cs" />
     <Compile Include="srcs\IO\Messages.cs" />
     <Compile Include="srcs\IO\OutputManager.cs" />
+    <Compile Include="srcs\NetworkUtils\ClientInfo.cs" />
     <Compile Include="srcs\NetworkUtils\Packets.cs" />
+    <Compile Include="srcs\NetworkUtils\ServerInfo.cs" />
     <Compile Include="srcs\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

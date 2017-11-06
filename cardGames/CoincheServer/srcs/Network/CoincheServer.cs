@@ -8,7 +8,7 @@ namespace CoincheServer.NetworkServer
 {
     public class CoincheServer : ACoincheSenderServer
     {
-        public CoincheServer() : base()
+        public CoincheServer(string _ip, int _port) : base(_ip, _port)
         {
 
         }
