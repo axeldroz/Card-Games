@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Common.srcs.GameUtils
 {
-    class Card
+    public struct Card
     {
+        public string suit; // couleur
+        public string number;
+        public Player player; // player qui joue la carte
+        public int point; // point que vaut la carte
     }
 }
