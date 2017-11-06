@@ -52,16 +52,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="srcs\EntryPointServer.cs" />
+    <Compile Include="srcs\Game\GameManagerServer.cs" />
+    <Compile Include="srcs\Game\RoomManager.cs" />
+    <Compile Include="srcs\Game\TableManager.cs" />
+    <Compile Include="srcs\Network\ACoincheConnectionServer.cs" />
+    <Compile Include="srcs\Network\ACoincheSenderServer.cs" />
+    <Compile Include="srcs\Network\CoincheServer.cs" />
+    <Compile Include="srcs\Network\NetworkListener.cs" />
     <Compile Include="srcs\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="srcs\Game\" />
-    <Folder Include="srcs\Network\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{0c99adf0-3928-46fb-aad1-921025d82b67}</Project>

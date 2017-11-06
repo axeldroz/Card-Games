@@ -51,6 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="srcs\IO\InputManager.cs" />
+    <Compile Include="srcs\IO\Messages.cs" />
+    <Compile Include="srcs\IO\OutputManager.cs" />
+    <Compile Include="srcs\NetworkUtils\Packets\Packets.cs" />
     <Compile Include="srcs\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="srcs\GameUtils\" />
-    <Folder Include="srcs\NetworkUtils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

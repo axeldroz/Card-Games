@@ -18,7 +18,6 @@ namespace CoincheServer
         static void Main(string[] args)
         {
             //Trigger the method PrintIncomingMessage when a packet of type 'Message' is received
-            ACoincheConnectionServer test = new ACoincheConnectionServer();
             //We expect the incoming object to be a string which we state explicitly by using <string>
             NetworkComms.AppendGlobalIncomingPacketHandler<Test>("Message", PrintIncomingMessage);
             //Start listening for incoming connections

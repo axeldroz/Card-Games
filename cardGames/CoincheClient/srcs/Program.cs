@@ -28,6 +28,11 @@ namespace CoincheClient
                 msg = "hello world",
                 id = 1
             };
+            Test msg = new Test()
+            {
+                msg = "T'as vu mec !",
+                id = 1
+            };
             while (true)
             {
                 //Write some information to the console window
@@ -35,7 +40,8 @@ namespace CoincheClient
                 Console.WriteLine("Sending message to server saying '" + messageToSend + "'");
 
                 //Send the message in a single line
-                NetworkComms.SendObject<Test>("Message", serverIP, serverPort, structure);
+                NetworkComms.SendObject<Test>("Message2", serverIP, serverPort, structure);
+                NetworkComms.SendObject<Test>("Message", serverIP, serverPort, msg);
                 //Check if user wants to go around the loop
                 Console.WriteLine("\nPress q to quit or any other key to send another message.");
                 if (Console.ReadKey(true).Key == ConsoleKey.Q) break;

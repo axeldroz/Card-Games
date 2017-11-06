@@ -8,9 +8,22 @@ namespace NetworkUtils
 {
     namespace Packets
     {
-        public class Packet00Message
+        /// <summary>
+        /// Packet00Message : String message
+        /// </summary>
+        public struct Packet00Message
         {
-            public int 
+            String message;
         };
+
+        /// <summary>
+        /// Packet01LoginRequest : String name
+        /// </summary>
+        public struct Packet01LoginRequest
+        {
+            String name;
+        }
+
+
     }
 }

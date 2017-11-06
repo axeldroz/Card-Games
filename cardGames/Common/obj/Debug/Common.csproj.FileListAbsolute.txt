@@ -1,0 +1,10 @@
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\bin\Debug\Common.exe.config
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\bin\Debug\Common.exe
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\bin\Debug\Common.pdb
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\bin\Debug\NetworkCommsDotNet.dll
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\bin\Debug\protobuf-net.dll
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\bin\Debug\ProtobufSerializer.dll
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\bin\Debug\NetworkCommsDotNet.pdb
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\obj\Debug\Common.exe
+C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\Common\obj\Debug\Common.pdb
