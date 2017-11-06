@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoincheServer
+namespace Common
 {
     class Program
     {
@@ -12,4 +12,5 @@ namespace CoincheServer
         {
         }
     }
+
 }

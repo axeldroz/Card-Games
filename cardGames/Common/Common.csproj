@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C08FBBFB-73ED-413B-AAF0-1BFCAEF2A6AC}</ProjectGuid>
+    <ProjectGuid>{0C99ADF0-3928-46FB-AAD1-921025D82B67}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CoincheServer</RootNamespace>
-    <AssemblyName>CoincheServer</AssemblyName>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,16 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NetworkCommsDotNet, Version=3.0.0.0, Culture=neutral, PublicKeyToken=f58108eb6480f6ec, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\NetworkCommsDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>..\protobuf-net.dll</HintPath>
-    </Reference>
-    <Reference Include="ProtobufSerializer">
-      <HintPath>..\ProtobufSerializer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,14 +49,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="srcs\Game\" />
-    <Folder Include="srcs\Network\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{0c99adf0-3928-46fb-aad1-921025d82b67}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
+    <Folder Include="srcs\GameUtils\" />
+    <Folder Include="srcs\NetworkUtils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
