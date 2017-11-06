@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoincheServer.NetworkServer
 {
-    public class CoincheServer
+    public class CoincheServer : ACoincheSenderServer
     {
-        public CoincheServer()
+        public CoincheServer() : base()
         {
 
         }

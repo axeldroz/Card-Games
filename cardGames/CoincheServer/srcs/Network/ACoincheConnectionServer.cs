@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoincheServer.NetworkServer
 {
-    public class ACoincheConnectionServer
+    public abstract class ACoincheConnectionServer
     {
         public ACoincheConnectionServer()
         {
