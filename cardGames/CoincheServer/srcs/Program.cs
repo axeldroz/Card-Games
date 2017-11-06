@@ -40,13 +40,6 @@ namespace CoincheServer
             Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + message.msg + "'.");
         }
 
-        [ProtoContract]
-        public struct Test
-        {
-            [ProtoMember(1)]
-            public string msg;
-            [ProtoMember(2)]
-            public int id;
-        }
+        
     }
 }

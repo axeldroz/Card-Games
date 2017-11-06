@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,12 @@ namespace Common
         {
         }
     }
-
+    [ProtoContract]
+    public struct Test
+    {
+        [ProtoMember(1)]
+        public string msg;
+        [ProtoMember(2)]
+        public int id;
+    }
 }

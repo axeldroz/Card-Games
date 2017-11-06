@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common;
 
 namespace CoincheClient
 {
@@ -41,15 +42,6 @@ namespace CoincheClient
                 else loopCounter++;
             }
             NetworkComms.Shutdown();
-        }
-
-        [ProtoContract]
-        public struct Test
-        {
-            [ProtoMember(1)]
-            public string msg;
-            [ProtoMember(2)]
-            public int id;
         }
 
     }
