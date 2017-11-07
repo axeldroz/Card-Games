@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,10 @@ namespace Common.NetworkUtils
         /// <summary>
         /// Packet00Message : String message
         /// </summary>
+        [ProtoContract]
         public struct Packet00Message
         {
+            [ProtoMember(1)]
             public string message;
         };
 

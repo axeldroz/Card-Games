@@ -8,7 +8,7 @@ namespace Common.IO
 {
     public static class Messages
     {
-        public static string success = "Success!";
-        public static string error = "Error!";
+        public static string Success = "Success!";
+        public static string Error = "Error!";
     }
 }

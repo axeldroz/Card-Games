@@ -11,6 +11,7 @@ namespace CoincheClient.Network
         public CClient(string _ip, int _port) : base(_ip, _port)
         {
             InitConnection(this);
+            Ping();
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace CoincheClient.Network
 {
     public class ACoincheConnectionClient
@@ -29,7 +28,15 @@ namespace CoincheClient.Network
         {
             Packet00Message ping;
             ping.message = "PING";
-            NetworkComms.SendObject<Packet00Message>("Message", serverInfo.ip, serverInfo.port, ping);
+            try
+            {
+                NetworkComms.SendObject<Packet00Message>("Message", serverInfo.ip, serverInfo.port, ping);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(Common.IO.Messages.Error + e.ToString());
+            }
+            Console.WriteLine("Ping sended");
         }
     }
 }
