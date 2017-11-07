@@ -25,7 +25,7 @@ namespace CoincheServer.Network
             NetworkComms.AppendGlobalIncomingPacketHandler
                 <Packet00Message>("Ping", this.WhenPing);
             NetworkComms.AppendGlobalIncomingPacketHandler
-                <Packet01LoginRequest>("LoginAnswer", this.WhenLoginRequest);
+                <Packet01LoginRequest>("LoginRequest", this.WhenLoginRequest);
             NetworkComms.AppendGlobalIncomingPacketHandler
                 <Packet03WaitGameRequest>("WaitGameRequest", this.WhenWaitGameRequest);
             NetworkComms.AppendGlobalIncomingPacketHandler

@@ -8,5 +8,6 @@ namespace Common.NetworkUtils
 {
     public struct ClientInfo
     {
+        public string name;
     }
 }

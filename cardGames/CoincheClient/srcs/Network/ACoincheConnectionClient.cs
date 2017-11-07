@@ -11,11 +11,13 @@ namespace CoincheClient.Network
     public class ACoincheConnectionClient
     {
         protected ServerInfo serverInfo;
+        protected ClientInfo clientInfo;
         private NetworkListener nl;
-        public ACoincheConnectionClient(string _ip, int _port)
+        public ACoincheConnectionClient(string _ip, int _port, string name)
         {
             serverInfo.ip = _ip;
             serverInfo.port = _port;
+            clientInfo.name = name;
         }
 
         protected void InitConnection(CClient _son)
@@ -26,7 +28,7 @@ namespace CoincheClient.Network
 
         public void Ping()
         {
-            Packet00Message ping;
+            Packet00Message ping = new Packet00Message();
             ping.message = "PING";
             try
             {
