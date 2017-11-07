@@ -27,5 +27,32 @@ namespace CoincheClient.Network
             Console.WriteLine(str);
             Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.message + "'.");
         }
+
+        protected void WhenLoginAnswer(PacketHeader packetHeader, Connection connection, Packet02LoginAnswer incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void WhenWaitGameAnswer(PacketHeader packetHeader, Connection connection, Packet04WaitGameAnswer incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void WhenBetRequest(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+        protected void WhenFirstBetRequest(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+        protected void WhenBetAccepted(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+        protected void WhenPlayingCardRequest(PacketHeader packetHeader, Connection connection, Packet07Deck incomingObject)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

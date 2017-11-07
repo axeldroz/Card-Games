@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using Common.GameUtils;
+using ProtoBuf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Common.NetworkUtils
         /// Packet00Message : String message
         /// </summary>
         [ProtoContract]
-        public struct Packet00Message
+        public class Packet00Message
         {
             [ProtoMember(1)]
             public string message;
@@ -22,23 +23,28 @@ namespace Common.NetworkUtils
         /// <summary>
         /// Packet01LoginRequest : String name
         /// </summary>
-        public struct Packet01LoginRequest
+        [ProtoContract]
+        public class Packet01LoginRequest
         {
-            string name;
+            [ProtoMember(1)]
+            public string name;
         }
 
         /// <summary>
         /// Packet02LoginAnswer : bool accepted
         /// </summary>
-        public struct Packet02LoginAnswer
+        [ProtoContract]
+        public class Packet02LoginAnswer
         {
-            bool accepted;
+            [ProtoMember(1)]
+            public bool accepted;
         }
 
         /// <summary>
         /// Packet03WaitGameRequest : Nothing
         /// </summary>
-        public struct Packet03WaitGameRequest
+        [ProtoContract]
+        public class Packet03WaitGameRequest
         {
             
         }
@@ -46,29 +52,44 @@ namespace Common.NetworkUtils
         /// <summary>
         /// Packet04WaitGameAnswer : bool accepted
         /// </summary>
-        public struct Packet04WaitGameAnswer
+        [ProtoContract]
+        public class Packet04WaitGameAnswer
         {
-            bool accepted;   
+            [ProtoMember(1)]
+            public bool accepted;   
         }
 
         /// <summary>
         /// Packet05BetRequest : string descr, string type, Bet last_bet
         /// </summary>
-        public struct Packet05BetRequest
+        [ProtoContract]
+        public class Packet05Bet
         {
-            string descr;
-            string type;
-            //Bet last_bet;
+            [ProtoMember(1)]
+            public string descr;
+            [ProtoMember(2)]
+            public Bet bet;
         }
 
-        /// <summary>
-        ///  Packet06BetAnswer : string type, Bet newbet
-        /// </summary>
-        public struct Packet06BetAnswer
+        [ProtoContract]
+        public class Packet06Card
         {
-            string type;
-            //Bet newbet
+            [ProtoMember(1)]
+            public string descr;
+            [ProtoMember(2)]
+            public Card card;
         }
+
+        [ProtoContract]
+        public class Packet07Deck
+        {
+            [ProtoMember(1)]
+            public string descr;
+            [ProtoMember(2)]
+            public Deck deck;
+        }
+
+
 
     }
 }

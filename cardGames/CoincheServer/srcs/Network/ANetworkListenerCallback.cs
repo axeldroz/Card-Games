@@ -35,6 +35,19 @@ namespace CoincheServer.Network
         protected void WhenMessage(PacketHeader header, Connection connection, Packet00Message packet)
         {
             string str = header.PacketType.ToString();
+            Packet00Message answer = new Packet00Message()
+            {
+                message = "Hello client ! "
+            };
+            //answer.message = "Hello client ! ";
+            Console.WriteLine(str);
+            Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.message + "'.");
+
+            connection.SendObject<Packet00Message>("Message", answer);
+        }
+        protected void WhenPing(PacketHeader header, Connection connection, Packet00Message packet)
+        {
+            string str = header.PacketType.ToString();
             Packet00Message answer = new Packet00Message();
             answer.message = "Hello client ! ";
             Console.WriteLine(str);

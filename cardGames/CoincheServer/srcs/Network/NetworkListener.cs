@@ -15,9 +15,15 @@ namespace CoincheServer.Network
 
         }
 
+        /// <summary>
+        /// Init Callback Method
+        /// </summary>
         public void Init()
         {
-            NetworkComms.AppendGlobalIncomingPacketHandler<Packet00Message>("Message", this.WhenMessage);
+            NetworkComms.AppendGlobalIncomingPacketHandler<Packet00Message>
+                ("Message", this.WhenMessage);
+            NetworkComms.AppendGlobalIncomingPacketHandler<Packet00Message>
+                ("Ping", this.WhenPing);
         }
 
     }

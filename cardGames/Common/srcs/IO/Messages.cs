@@ -10,5 +10,10 @@ namespace Common.IO
     {
         public static string Success = "Success!";
         public static string Error = "Error!";
+
+        public static class Server
+        {
+            public static string BetRequest = "You have to bet";
+        }
     }
 }
