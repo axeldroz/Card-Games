@@ -20,10 +20,18 @@ namespace CoincheServer.Network
         /// </summary>
         public void Init()
         {
-            NetworkComms.AppendGlobalIncomingPacketHandler<Packet00Message>
-                ("Message", this.WhenMessage);
-            NetworkComms.AppendGlobalIncomingPacketHandler<Packet00Message>
-                ("Ping", this.WhenPing);
+            NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet00Message>("Message", this.WhenMessage);
+            NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet00Message>("Ping", this.WhenPing);
+            NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet01LoginRequest>("LoginAnswer", this.WhenLoginRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet03WaitGameRequest>("WaitGameRequest", this.WhenWaitGameRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet05Bet>("BetAnswer", this.WhenBetAnswer);
+            NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet07Deck>("PlayingCardAnswer", this.WhenPlayingCardAnswer);
         }
 
     }

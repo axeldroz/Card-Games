@@ -45,6 +45,7 @@ namespace CoincheServer.Network
 
             connection.SendObject<Packet00Message>("Message", answer);
         }
+
         protected void WhenPing(PacketHeader header, Connection connection, Packet00Message packet)
         {
             string str = header.PacketType.ToString();
@@ -54,6 +55,29 @@ namespace CoincheServer.Network
             Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.message + "'.");
 
             connection.SendObject<Packet00Message>("Message", answer);
+        }
+
+        protected void WhenLoginRequest(PacketHeader packetHeader, Connection connection, 
+            Packet01LoginRequest incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void WhenWaitGameRequest(PacketHeader packetHeader, Connection connection, 
+            Packet03WaitGameRequest incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void WhenBetAnswer(PacketHeader packetHeader, Connection connection, 
+            Packet05Bet incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+        protected void WhenPlayingCardAnswer(PacketHeader packetHeader, Connection connection, 
+            Packet07Deck incomingObject)
+        {
+            throw new NotImplementedException();
         }
 
     }
