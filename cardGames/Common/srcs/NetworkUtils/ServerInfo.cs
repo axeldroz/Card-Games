@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.srcs.NetworkUtils
+namespace Common.NetworkUtils
 {
     public struct ServerInfo
     {
