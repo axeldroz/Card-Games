@@ -10,7 +10,7 @@ namespace CoincheServer.Network
     {
         public CServer(string _ip, int _port) : base(_ip, _port)
         {
-
+            InitSending(this);
         }
     }
 }

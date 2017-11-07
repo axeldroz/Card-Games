@@ -62,7 +62,7 @@ namespace Game
             set { isReady = value; }
         }
 
-        public Player getPlayer(Player p)
+        public Player GetPlayer(Player p)
         {
             foreach (Player elem in player)
             {
@@ -72,7 +72,7 @@ namespace Game
             return (null);
         }
 
-        public void startHand()
+        public void StartHand()
         {
             Console.WriteLine("Game Starts!");
         }

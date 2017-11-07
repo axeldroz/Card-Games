@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.NetworkUtils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,33 +9,38 @@ namespace CoincheServer.Network
 {
     public abstract class ACoincheConnectionServer
     {
-        private string ip;
-        private int port;
+        protected ServerInfo serverInfo;
+        private NetworkListener nl;
         public ACoincheConnectionServer(string _ip, int _port)
         {
-            this.ip = _ip;
-            this.port = _port;
+            serverInfo.ip = _ip;
+            serverInfo.port = _port;
+        }
+        public void InitConnection(CServer _son)
+        {
+            nl = new NetworkListener(_son);
+            nl.Init();
         }
         public string Ip
         {
             get
             {
-                return ip;
+                return serverInfo.ip;
             }
             set
             {
-                ip = value;
+                serverInfo.ip = value;
             }
         }
         public int Port
         {
             get
             {
-                return port;
+                return serverInfo.port;
             }
             set
             {
-                port = value;
+                serverInfo.port = value;
             }
         }
     }

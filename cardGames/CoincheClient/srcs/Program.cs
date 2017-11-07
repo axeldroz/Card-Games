@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+using CoincheClient.Network;
 
 namespace CoincheClient
 {
     class Program
     {
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             //Request server IP and port number
             Console.WriteLine("Please enter the server IP and port in the format 192.168.0.1:10000 and press return:");
@@ -48,7 +49,11 @@ namespace CoincheClient
                 else loopCounter++;
             }
             NetworkComms.Shutdown();
+        }*/
+        static void Main(string[] args)
+        {
+            CClient client = new CClient("127.0.0.1", 4242);
+            Console.ReadKey();
         }
-
     }
 }

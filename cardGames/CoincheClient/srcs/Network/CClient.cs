@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CoincheClient.Network
 {
-    public class CClient
+    public class CClient : ACoincheConnectionClient
     {
-        public CClient()
+        public CClient(string _ip, int _port) : base(_ip, _port)
         {
-
+            InitConnection(this);
         }
     }
 }
