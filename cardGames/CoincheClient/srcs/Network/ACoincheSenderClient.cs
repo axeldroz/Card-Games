@@ -24,10 +24,12 @@ namespace CoincheClient.Network
         /*
          * Following function is about sending packet
          */
-        public void SendLoginAnswer()
+        public void SendLoginRequest(string _name)
         {
-            Packet01LoginRequest pack = new Packet01LoginRequest();
-            pack.name = this.clientInfo.name;
+            Packet01LoginRequest pack = new Packet01LoginRequest()
+            {
+                name = _name
+            };
             NetworkComms.SendObject<Packet01LoginRequest>
                 ("LoginRequest", serverInfo.ip, serverInfo.port, pack);
         }
@@ -49,7 +51,7 @@ namespace CoincheClient.Network
             };
             NetworkComms.SendObject<Packet05Bet>
                 ("BetAnswer", serverInfo.ip, serverInfo.port, pack);
-        }
+        } 
 
         public void SendPlayingCardAnswer(Common.GameUtils.Card _card)
         {

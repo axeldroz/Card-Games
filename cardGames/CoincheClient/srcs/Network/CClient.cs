@@ -13,5 +13,29 @@ namespace CoincheClient.Network
             InitSending(this);
             Ping();
         }
+
+        /*
+         * Explicit functions
+         */
+        public void Login()
+        {
+            string name;
+
+            name = Common.IO.InputManager.Client.CreateLogin();
+            clientInfo.name = name;
+            SendLoginRequest(clientInfo.name);
+        }
+
+        public void WaitGame()
+        {
+            SendWaitGameRequest();
+        }
+
+        public void Bet()
+        {
+            Common.GameUtils.Bet bet;
+
+            
+        }
     }
 }

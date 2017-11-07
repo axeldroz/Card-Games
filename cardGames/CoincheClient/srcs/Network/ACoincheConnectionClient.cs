@@ -13,11 +13,11 @@ namespace CoincheClient.Network
         protected ServerInfo serverInfo;
         protected ClientInfo clientInfo;
         private NetworkListener nl;
-        public ACoincheConnectionClient(string _ip, int _port, string name)
+        public ACoincheConnectionClient(string _ip, int _port)
         {
             serverInfo.ip = _ip;
             serverInfo.port = _port;
-            clientInfo.name = name;
+            clientInfo.name = "login";
         }
 
         protected void InitConnection(CClient _son)
