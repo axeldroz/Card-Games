@@ -15,5 +15,27 @@ namespace CoincheServer.NetworkServer
             this.ip = _ip;
             this.port = _port;
         }
+        public string Ip
+        {
+            get
+            {
+                return ip;
+            }
+            set
+            {
+                ip = value;
+            }
+        }
+        public int Port
+        {
+            get
+            {
+                return port;
+            }
+            set
+            {
+                port = value;
+            }
+        }
     }
 }
