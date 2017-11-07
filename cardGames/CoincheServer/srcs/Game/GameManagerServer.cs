@@ -15,7 +15,7 @@ namespace Game
         protected Bet bet;
         protected Deck handStack;
         protected bool isReady;
-        protected CoincheServer.NetworkServer.CoincheServer server;
+        protected CoincheServer.Network.CServer server;
 
         public GameManagerServer()
         {

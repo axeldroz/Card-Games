@@ -10,8 +10,7 @@ namespace Common.GameUtils
     {
         private int id;
         private string name;
-        private Player player1;
-        private Player player2;
+        private List<Player> player;
         private int score;
         public bool full;
 
@@ -19,16 +18,14 @@ namespace Common.GameUtils
         {
             id = 0;
             name = "";
-            player1 = null;
-            player2 = null;
+            player = new List<Player>();
             score = 0;
             full = false;
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public Player Player1 { get; set; }
-        public Player Player2 { get; set; }
+        public List<Player> Player { get; set; }
         public int Score { get; set; }
         public bool Full { get; set; }
 
