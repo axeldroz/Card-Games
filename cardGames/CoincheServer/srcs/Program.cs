@@ -9,13 +9,14 @@ using NetworkCommsDotNet;
 using NetworkCommsDotNet.Tools;
 using NetworkCommsDotNet.Connections;
 using ProtoBuf;
-using CoincheServer.NetworkServer;
+using CoincheServer.Network;
+
 
 namespace CoincheServer
 {
     class Program
     {
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             //Trigger the method PrintIncomingMessage when a packet of type 'Message' is received
             //We expect the incoming object to be a string which we state explicitly by using <string>
@@ -34,15 +35,20 @@ namespace CoincheServer
 
             //We have used NetworkComms so we should ensure that we correctly call shutdown
             NetworkComms.Shutdown();
-        }
+        }*/
 
-        private static void PrintIncomingMessage(PacketHeader header, Connection connection, Test message)
+        /*private static void PrintIncomingMessage(PacketHeader header, Connection connection, Test message)
         {
             string str = header.PacketType.ToString();
             Console.WriteLine(str);
             Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + message.msg + "'.");
-        }
+        }*/
 
+        static void Main(string[] args)
+        {
+            CServer server = new CServer("127.0.0.1", 4242);
+            Console.ReadKey();
+        }
         
     }
 }

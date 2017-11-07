@@ -56,11 +56,11 @@
     <Compile Include="srcs\Game\GameManagerServer.cs" />
     <Compile Include="srcs\Game\RoomManager.cs" />
     <Compile Include="srcs\Game\TableManager.cs" />
-    <Compile Include="srcs\NetworkServer\ACoincheConnectionServer.cs" />
-    <Compile Include="srcs\NetworkServer\ACoincheSenderServer.cs" />
-    <Compile Include="srcs\NetworkServer\ANetworkListenerCallback.cs" />
-    <Compile Include="srcs\NetworkServer\CoincheServer.cs" />
-    <Compile Include="srcs\NetworkServer\NetworkListener.cs" />
+    <Compile Include="srcs\Network\ACoincheConnectionServer.cs" />
+    <Compile Include="srcs\Network\ACoincheSenderServer.cs" />
+    <Compile Include="srcs\Network\ANetworkListenerCallback.cs" />
+    <Compile Include="srcs\Network\CServer.cs" />
+    <Compile Include="srcs\Network\NetworkListener.cs" />
     <Compile Include="srcs\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

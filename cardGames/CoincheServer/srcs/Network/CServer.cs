@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoincheClient.Network
+namespace CoincheServer.Network
 {
-    public class CoincheClient
+    public class CServer : ACoincheSenderServer
     {
-        public CoincheClient()
+        public CServer(string _ip, int _port) : base(_ip, _port)
         {
 
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoincheServer.NetworkServer
+namespace CoincheServer.Network
 {
     public abstract class ACoincheSenderServer : ACoincheConnectionServer
     {

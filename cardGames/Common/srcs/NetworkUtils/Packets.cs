@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetworkUtils
+namespace Common.NetworkUtils
 {
     namespace Packets
     {
@@ -13,7 +13,7 @@ namespace NetworkUtils
         /// </summary>
         public struct Packet00Message
         {
-            string message;
+            public string message;
         };
 
         /// <summary>
