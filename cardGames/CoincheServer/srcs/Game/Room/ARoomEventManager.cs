@@ -19,10 +19,11 @@ namespace CoincheServer.Game.Room
         public void EventPlayerAdded()
         {
             Game.Table.TableManager t = tables.Last();
+            //t.AddPlayer();
             // check si assez de player pour lancer partie
             if (t.IsFull())
             {
-                // t.Start();
+                tables.Add(new Table.TableManager());
             }
         }
     }

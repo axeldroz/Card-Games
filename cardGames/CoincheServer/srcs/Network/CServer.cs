@@ -16,7 +16,7 @@ namespace CoincheServer.Network
         /*
          * Function For TableManager Caller
          */ 
-        public void AskABet(Common.GameUtils.Player player, Common.GameUtils.Bet bet)
+        public void AskBet(Common.GameUtils.Player player, Common.GameUtils.Bet bet)
         {
             SendBetRequest(player.Connection, bet);
         }

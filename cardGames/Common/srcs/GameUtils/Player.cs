@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.srcs.GameUtils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +9,26 @@ namespace Common.GameUtils
 {
     public class Player
     {
+        /* gérer par CServer */
         private int id;
         private string name;
-        private int score;
-        private int teamscore;
         private int status; // 0 = afk, 1 = ready for a game
+        private NetworkCommsDotNet.Connections.Connection connection;
+
+        /* gérer par TableManger */
+        private int score;
+        //private int teamscore;
         private Deck deck;
         private Team team;
         private Table table; // la table ou le joueur se trouve
-        private NetworkCommsDotNet.Connections.Connection connection;
+
 
         public Player()
         {
             id = 0;
             name = "";
             score = 0;
-            teamscore = 0;
+            //teamscore = 0;
             status = 0;
             deck = null;
             team = null;
