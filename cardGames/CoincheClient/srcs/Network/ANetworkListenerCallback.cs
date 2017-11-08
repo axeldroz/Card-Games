@@ -40,11 +40,11 @@ namespace CoincheClient.Network
 
         protected void WhenBetRequest(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {
-            throw new NotImplementedException();
+            client.Bet();
         }
         protected void WhenFirstBetRequest(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {
-            throw new NotImplementedException();
+            client.Bet();
         }
         protected void WhenBetAccepted(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {
@@ -52,7 +52,7 @@ namespace CoincheClient.Network
         }
         protected void WhenPlayingCardRequest(PacketHeader packetHeader, Connection connection, Packet07Deck incomingObject)
         {
-            throw new NotImplementedException();
+            client.PlayCard();
         }
     }
 }

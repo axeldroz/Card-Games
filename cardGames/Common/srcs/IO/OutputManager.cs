@@ -21,6 +21,19 @@ namespace Common.IO
                     Console.WriteLine("Creating of bet : ");
                 }
             }
+
+            /* Afficher composant de jeu */
+            public class Display
+            {
+                public static void Bet(Common.GameUtils.Bet bet)
+                {
+                    Console.Write("Bet : ");
+                    Console.Write("Suit = " + bet.suit);
+                    Console.Write("Points = " + bet.points);
+
+
+                }
+            }
             public static class Server
             {
 
