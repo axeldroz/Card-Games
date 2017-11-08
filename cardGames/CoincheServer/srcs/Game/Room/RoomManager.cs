@@ -20,6 +20,10 @@ namespace CoincheServer.Game.Room
         void AddPlayer(Player player)
         {
             /* petit trick pour appelé ovveride dans une classe parente */
+            player.Id = 0;
+            player.Score = 0;
+            player.Teamscore = 0;
+
             if (((ARoomActionManager)this).DoAddPlayer(player))
                 EventPlayerAdded();
         }
