@@ -6,62 +6,49 @@ using System.Text;
 using System.Threading.Tasks;
 using CoincheServer;
 using System.IO;
+using CoincheServer.Network;
 
 namespace CoincheServer.Game.Table
 {
-    public class TableManager : GameManagerServer
+    public class TableManager : ATableActionManager
     {
-        public TableManager()
+        public TableManager(CServer _server) : base(_server)
         {
-            
+
         }
 
-        public Team findTeamAvailable()
-        {
-            foreach (Team elem in team)
-            {
-                if (!elem.full)
-                    return (elem);
-            }
-            return (null);
-        }
-
-        public int addPlayer(string name, int id)
+        /// <summary>
+        /// Add a new player to the table. If the Table and the teams are full, the game start.
+        /// </summary>
+        /// <param name="player"></param>
+        public void AddPlayer(Player player)
         {
             try
             {
-                if (name == null || id < 0)
-                    throw new ArgumentException("Error: The player must have at least a name and an id >= 0");
-                Team tmp;
-                if ((tmp = findTeamAvailable()) == null)
-                    throw new Exception("Error: All teams are full");
-                Player newPlayer = new Player
-                {
-                    Name = name,
-                    Id = id,
-                    Team = tmp
-                };
-                player.Add(newPlayer);
-                Console.WriteLine("Player " + name + " added to the team N°" + tmp.Id);
-                if (tmp.Player.Count == 2)
-                    tmp.Full = true;
-                return (0);
+                DoAddPlayer(player);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message + " // Source : " + ex.Source);
-                return (-1);
             }
-            
         }
 
-        public bool IsFull()
+        /// <summary>
+        /// Play a card.
+        /// </summary>
+        /// <param name="player"></param>
+        public void AddCard(Player player)
         {
-            if (team.First().full && team.Last().full)
-                return (true);
-            return (false);
+            try
+            {
+                DoAddCard(player);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message + " // Source : " + ex.Source);
+            }
         }
-        
+
 
     }
 }

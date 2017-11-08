@@ -14,12 +14,12 @@ namespace CoincheServer.Network
     {
         protected ServerInfo serverInfo;
         private NetworkListener nl;
-        protected Game.RoomManager room;
+        protected Game.Room.RoomManager room;
         public ACoincheConnectionServer(string _ip, int _port)
         {
             serverInfo.ip = _ip;
             serverInfo.port = _port;
-            room = new Game.RoomManager();
+            room = new Game.Room.RoomManager();
         }
 
         ~ACoincheConnectionServer()
@@ -75,7 +75,7 @@ namespace CoincheServer.Network
                 serverInfo.port = value;
             }
         }
-        public Game.RoomManager Room
+        public Game.Room.RoomManager Room
         {
             get
             {
