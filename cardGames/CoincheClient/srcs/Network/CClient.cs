@@ -36,6 +36,7 @@ namespace CoincheClient.Network
         {
             Common.GameUtils.Bet bet;
 
+            Console.WriteLine("Oui je passe bien par là");
             bet = Common.IO.InputManager.Client.CreateBet();
             SendBetAnswer(bet);
         }
