@@ -40,6 +40,17 @@ namespace CoincheServer.Game.Table
             return (false);
         }
 
+        public Player NextPlayer(Player player)
+        {
+            if (player == Team.First().Player.First())
+                return (Team.Last().Player.First());
+            if (player == Team.Last().Player.First())
+                return (Team.First().Player.Last());
+            if (player == Team.First().Player.Last())
+                return (Team.Last().Player.Last());
+            return (null);
+        }
+
         /// <summary>
         /// Check a team that is not full yet.
         /// </summary>

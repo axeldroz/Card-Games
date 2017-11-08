@@ -49,8 +49,10 @@ namespace CoincheClient.Network
                 Descr = clientInfo.name,
                 Bet = _bet
             };
+            Common.IO.OutputManager.Debug.DisplayVar("Bet.Points", pack.Bet.points + "");
             NetworkComms.SendObject<Packet05Bet>
                 ("BetAnswer", serverInfo.ip, serverInfo.port, pack);
+            Common.IO.OutputManager.Debug.Display("ACoincheSenderClient", "SendBetAnswer() : sended !");
         } 
 
         public void SendPlayingCardAnswer(Common.GameUtils.Card _card)

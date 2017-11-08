@@ -18,8 +18,17 @@ namespace CoincheServer.Network
          */ 
         public void AskBet(Common.GameUtils.Player player, Common.GameUtils.Bet bet)
         {
-            SendBetRequest(player.Connection, bet);
-        }
+            Common.IO.OutputManager.Debug.Display("CServer", "AskBet() : called");
+            if (bet.points == 0)
+            {
+                Common.IO.OutputManager.Debug.Display("Problem bet = 0");
+                SendBetRequest(player.Connection, new Common.GameUtils.Bet());
+            }
+            else
+            {
+                SendBetRequest(player.Connection, bet);
+            }
+        }   
 
         public void AskPlayCard(Common.GameUtils.Player player)
         {

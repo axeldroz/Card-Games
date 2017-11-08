@@ -32,7 +32,8 @@ namespace Common.GameUtils
         public Team Team { get; set; }
         [ProtoMember(9)]
         public Table Table { get; set; } // la table ou le joueur se trouve
-
+        [ProtoMember(10)]
+        public int TableId { get; set; }
 
         public Player()
         {
@@ -43,6 +44,7 @@ namespace Common.GameUtils
             Status = 0;
             Deck = null;
             Team = null;
+            TableId = 0;
         }
     }
 }

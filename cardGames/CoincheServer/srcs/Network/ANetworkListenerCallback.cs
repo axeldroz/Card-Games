@@ -75,9 +75,11 @@ namespace CoincheServer.Network
         }
 
         protected void WhenBetAnswer(PacketHeader packetHeader, Connection connection, 
-            Packet05Bet incomingObject)
+            Packet05Bet pack)
         {
-            throw new NotImplementedException();
+            Common.IO.OutputManager.Debug.Display("ANetworkListenerCallback", "WhenBetAnswer : received");
+            Common.GameUtils.Bet bet = pack.Bet;
+            server.Room.AddBet(connection, bet);
         }
         protected void WhenPlayingCardAnswer(PacketHeader packetHeader, Connection connection, 
             Packet07Deck incomingObject)

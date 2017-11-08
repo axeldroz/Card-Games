@@ -51,18 +51,25 @@ namespace CoincheServer.Network
         }
         public void SendBetRequest(Connection c, Common.GameUtils.Bet _bet)
         {
-                Packet05Bet pack = new Packet05Bet()
+            Common.IO.OutputManager.Debug.Display("CServerSender", "SendBetRequest() : called");
+            Packet05Bet pack = new Packet05Bet()
                 {
                     Descr = Common.IO.Messages.Server.BetRequest,
                     Bet = _bet
                 };
+
             try
             {
                 c.SendObject<Packet05Bet>("BetRequest", pack);
             }
             catch (InvalidOperationException ex)
             {
+                Console.WriteLine("InvalidOperationException : " + ex.ToString());
                 throw ex;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception : " + e.ToString());
             }
         }
         public void SendBetAccepted(Connection c, Common.GameUtils.Bet bet)

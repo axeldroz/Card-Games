@@ -22,7 +22,7 @@ namespace CoincheServer.Game.Table
             {
                 Console.WriteLine("TableActionManager.DoAddPLayer()");
                 tmp.Player.Add(player);
-                Console.WriteLine("Player " + player.Name + "has join the team " + tmp.Name + "!");
+                Console.WriteLine("Player " + player.Name + " has join the team " + tmp.Name + "!");
                 if (tmp.Player.Count == 2)
                 {
                     tmp.Full = true; // the team is full.
@@ -40,10 +40,11 @@ namespace CoincheServer.Game.Table
 
         }
 
-        public void DoAddBet(Player player, Bet newBet)
+        public void DoAddBet(Bet newBet)
         {
+            Common.IO.OutputManager.Debug.Display("ATableActionManager", "DoAddBet() : called");
             bet = newBet;
-            EventBetAdded(player);
+            EventBetAdded(newBet.player, newBet);
         }
     }
 }

@@ -34,12 +34,18 @@ namespace CoincheServer.Game.Table
             }
         }
 
+        public void AddBet(Bet bet)
+        {
+            DoAddBet(bet);
+        }
+
         /// <summary>
         /// Play a card.
         /// </summary>
         /// <param name="player"></param>
         public void AddCard(Player player)
         {
+            Common.IO.OutputManager.Debug.Display("TableManager", "AddBet() : called");
             try
             {
                 DoAddCard(player);

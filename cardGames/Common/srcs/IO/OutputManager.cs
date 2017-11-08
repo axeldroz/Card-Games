@@ -41,7 +41,22 @@ namespace Common.IO
         }
         public static class Debug
         {
-
+            public static void Display(string msg)
+            {
+                Console.WriteLine(msg);
+            }
+            public static void Display(string key, string msg)
+            {
+                Console.WriteLine("<" + key + "> " + msg);
+            }
+            public static void DisplayVar(string name, string value)
+            {
+                Console.WriteLine("VAR : " + name + "=" + value);
+            }
+            public static void DisplayVar(string name, bool value)
+            {
+                Console.WriteLine("VAR : " + name + "=>" + value);
+            }
         }
 
         public static class Error

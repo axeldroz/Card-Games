@@ -25,11 +25,13 @@ namespace CoincheServer.Game.Room
                 return (false);
 
             Console.WriteLine("RoomActionManager.DoAddPlayer");
-            room.Add(player);
+            roomPlayers.Add(player);
             Game.Table.TableManager t;
             try
             {
                 t = tables.Last();
+                if ((player.TableId = tables.Count - 1) == 0)
+                    player.TableId = 0;
                 t.AddPlayer(player);
             }
             catch (ArgumentNullException e)
@@ -44,6 +46,15 @@ namespace CoincheServer.Game.Room
                 t.AddPlayer(player);
             }
                 return (true);
+        }
+
+        public bool DoAddBet(Bet bet)
+        {
+            Common.IO.OutputManager.Debug.Display("ARoomActionManager", "DoAddBet() : called");
+            Game.Table.TableManager t = FindTable(bet.player);
+            Common.IO.OutputManager.Debug.DisplayVar("table is null", t == null);
+            t.AddBet(bet);
+            return (true);
         }
     }
 }

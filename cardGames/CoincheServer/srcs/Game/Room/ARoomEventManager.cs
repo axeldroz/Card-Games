@@ -25,5 +25,10 @@ namespace CoincheServer.Game.Room
                 tables.Add(new Table.TableManager(server));
             }
         }
+
+        public void EventBetAdded(Common.GameUtils.Bet bet)
+        {
+
+        }
     }
 }

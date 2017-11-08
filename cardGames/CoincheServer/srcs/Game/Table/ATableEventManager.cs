@@ -34,9 +34,12 @@ namespace CoincheServer.Game.Table
             }
         }
 
-        public void EventBetAdded(Player player)
+        public void EventBetAdded(Player player, Bet _bet)
         {
-
+            Common.IO.OutputManager.Debug.Display("ARoomEventManager", "EventAddBet() : called");
+            Player nextPlayer = NextPlayer(player);
+            Common.IO.OutputManager.Debug.DisplayVar("nextPlayer is null", nextPlayer == null);
+            server.AskBet(nextPlayer, _bet);
         }
     }
 }

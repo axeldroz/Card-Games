@@ -1,4 +1,5 @@
 ﻿using Common.GameUtils;
+using NetworkCommsDotNet.Connections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,14 @@ namespace CoincheServer.Game.Room
         /// Ajoute un parie sur la table demandée
         /// </summary>
         /// <param name="bet"></param>
-        public void AddBet(Bet bet)
+        public void AddBet(Connection c, Bet bet)
         {
-
+            Common.IO.OutputManager.Debug.Display("RoomManager", "AddBet() : called");
+            Player p = FindPlayer(c);
+            Common.IO.OutputManager.Debug.DisplayVar("p.TableID", "" + p.TableId);
+            bet.player = p;
+            if (DoAddBet(bet))
+                EventBetAdded(bet);
         }
     }
 }

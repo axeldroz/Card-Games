@@ -48,7 +48,7 @@ namespace CoincheServer
         {
             CServer server = new CServer("127.0.0.1", 4242);
             server.Start();
-            Console.ReadKey();
+            Common.IO.InputManager.Standard.WaitQuit();
             server.Stop();
         }
         

@@ -65,7 +65,32 @@ namespace Common.IO
                     Console.WriteLine("Please Enter a number between 0-80");
                     a = Int32.Parse(Console.ReadLine());
                 }
+                bet.points = a;
+                bet.player = null;
+                bet.team = null;
+                bet.coinched = false;
+                bet.surcoinched = false;
+                bet.id = 0;
                 return (bet);
+            }
+        }
+
+        public static class Standard
+        {
+            public static void WaitQuit()
+            {
+                Console.WriteLine("Press a key to quit ...");
+                Console.ReadKey();
+            }
+            public static void WaitKey()
+            {
+                Console.WriteLine("Press a key To continue ...");
+                Console.ReadKey();
+            }
+            public static void WaitKey(string cmd)
+            {
+                Console.WriteLine("Press a key to" + cmd + "...");
+                Console.ReadKey();
             }
         }
     }
