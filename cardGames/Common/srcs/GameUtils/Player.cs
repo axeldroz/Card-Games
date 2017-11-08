@@ -1,5 +1,4 @@
-﻿using Common.srcs.GameUtils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +14,7 @@ namespace Common.GameUtils
         private int status; // 0 = afk, 1 = ready for a game
         private NetworkCommsDotNet.Connections.Connection connection;
         private bool hasPlay;
+        private bool hasBet;
         /* gérer par TableManager */
         private int score;
         //private int teamscore;
