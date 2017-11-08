@@ -17,14 +17,14 @@ namespace CoincheServer.Game.Room
         /*
          * Following Handling method for server
          */
-        void AddPlayer(Player player)
+        public void AddPlayer(Player player)
         {
             /* petit trick pour appelé ovveride dans une classe parente */
             player.Id = 0;
             player.Score = 0;
-            player.Teamscore = 0;
-
-            if (((ARoomActionManager)this).DoAddPlayer(player))
+            //player.Teamscore = 0;
+            Console.WriteLine("RoomManager.AddPlayer");
+            if (DoAddPlayer(player))
                 EventPlayerAdded();
         }
 
@@ -32,7 +32,7 @@ namespace CoincheServer.Game.Room
         /// Ajoute un parie sur la table demandée
         /// </summary>
         /// <param name="bet"></param>
-        void AddBet(Bet bet)
+        public void AddBet(Bet bet)
         {
 
         }

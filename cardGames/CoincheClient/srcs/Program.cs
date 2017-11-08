@@ -53,6 +53,10 @@ namespace CoincheClient
         static void Main(string[] args)
         {
             CClient client = new CClient("127.0.0.1", 4242);
+            Console.WriteLine("Press a Key To log");
+            Console.ReadKey();
+            client.Login();
+            Console.WriteLine("Press a key to quit");
             Console.ReadKey();
         }
     }

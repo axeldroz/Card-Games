@@ -24,6 +24,7 @@ namespace CoincheClient.Network
             name = Common.IO.InputManager.Client.CreateLogin();
             clientInfo.name = name;
             SendLoginRequest(clientInfo.name);
+            Console.WriteLine("Client sended LoginRequest");
         }
 
         public void WaitGame()

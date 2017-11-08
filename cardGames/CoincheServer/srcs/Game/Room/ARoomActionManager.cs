@@ -24,6 +24,7 @@ namespace CoincheServer.Game.Room
             if (room == null)
                 return (false);
 
+            Console.WriteLine("RoomActionManager.DoAddPlayer");
             room.Add(player);
             Game.Table.TableManager t = tables.Last();
             try

@@ -65,7 +65,7 @@ namespace CoincheServer.Network
                 Name = pack.name,
                 Connection = connection
             };
-            server.Room.addPlayer(player);
+            server.Room.AddPlayer(player);
         }
 
         protected void WhenWaitGameRequest(PacketHeader packetHeader, Connection connection, 

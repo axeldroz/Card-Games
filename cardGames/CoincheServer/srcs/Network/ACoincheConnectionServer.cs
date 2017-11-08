@@ -15,11 +15,12 @@ namespace CoincheServer.Network
         protected ServerInfo serverInfo;
         private NetworkListener nl;
         protected Game.Room.RoomManager room;
+        private CServer myserverInstance;
         public ACoincheConnectionServer(string _ip, int _port)
         {
             serverInfo.ip = _ip;
             serverInfo.port = _port;
-            room = new Game.Room.RoomManager();
+            room = new Game.Room.RoomManager(myserverInstance);
         }
 
         ~ACoincheConnectionServer()
@@ -30,7 +31,9 @@ namespace CoincheServer.Network
 
         public void InitConnection(CServer _son)
         {
+            
             nl = new NetworkListener(_son);
+            myserverInstance = _son;
             nl.Init();
         }
 
