@@ -20,7 +20,7 @@ namespace CoincheServer.Network
         {
             serverInfo.ip = _ip;
             serverInfo.port = _port;
-            room = new Game.Room.RoomManager(myserverInstance);
+            
         }
 
         ~ACoincheConnectionServer()
@@ -33,7 +33,7 @@ namespace CoincheServer.Network
         {
             
             nl = new NetworkListener(_son);
-            myserverInstance = _son;
+            room = new Game.Room.RoomManager(_son);
             nl.Init();
         }
 
