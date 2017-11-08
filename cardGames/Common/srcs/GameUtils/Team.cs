@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,18 @@ using System.Threading.Tasks;
 
 namespace Common.GameUtils
 {
+    [ProtoContract]
     public class Team
     {
+        [ProtoMember(1)]
         private int id;
+        [ProtoMember(2)]
         private string name;
+        [ProtoMember(3)]
         private List<Player> player;
+        [ProtoMember(4)]
         private int score;
+        [ProtoMember(5)]
         public bool full;
 
         public Team()

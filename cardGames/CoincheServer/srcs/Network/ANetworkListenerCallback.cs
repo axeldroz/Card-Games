@@ -37,11 +37,11 @@ namespace CoincheServer.Network
             string str = header.PacketType.ToString();
             Packet00Message answer = new Packet00Message()
             {
-                message = "Hello client ! "
+                Message = "Hello client ! "
             };
             //answer.message = "Hello client ! ";
             Console.WriteLine(str);
-            Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.message + "'.");
+            Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.Message + "'.");
 
             connection.SendObject<Packet00Message>("Message", answer);
         }
@@ -50,9 +50,9 @@ namespace CoincheServer.Network
         {
             string str = header.PacketType.ToString();
             Packet00Message answer = new Packet00Message();
-            answer.message = "Hello client ! ";
+            answer.Message = "Hello client ! ";
             Console.WriteLine(str);
-            Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.message + "'.");
+            Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.Message + "'.");
 
             connection.SendObject<Packet00Message>("Message", answer);
         }
@@ -62,7 +62,7 @@ namespace CoincheServer.Network
         {
             Common.GameUtils.Player player = new Common.GameUtils.Player
             {
-                Name = pack.name,
+                Name = pack.Name,
                 Connection = connection
             };
             server.Room.AddPlayer(player);

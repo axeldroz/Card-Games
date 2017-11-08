@@ -25,7 +25,7 @@ namespace CoincheClient.Network
         {
             string str = header.PacketType.ToString();
             Console.WriteLine(str);
-            Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.message + "'.");
+            Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.Message + "'.");
         }
 
         protected void WhenLoginAnswer(PacketHeader packetHeader, Connection connection, Packet02LoginAnswer incomingObject)

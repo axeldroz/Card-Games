@@ -29,7 +29,7 @@ namespace CoincheClient.Network
         public void Ping()
         {
             Packet00Message ping = new Packet00Message();
-            ping.message = "PING";
+            ping.Message = "PING";
             try
             {
                 NetworkComms.SendObject<Packet00Message>("Ping", serverInfo.ip, serverInfo.port, ping);

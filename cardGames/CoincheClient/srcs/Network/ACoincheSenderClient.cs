@@ -28,7 +28,7 @@ namespace CoincheClient.Network
         {
             Packet01LoginRequest pack = new Packet01LoginRequest()
             {
-                name = _name
+                Name = _name
             };
             NetworkComms.SendObject<Packet01LoginRequest>
                 ("LoginRequest", serverInfo.ip, serverInfo.port, pack);
@@ -46,8 +46,8 @@ namespace CoincheClient.Network
         {
             Packet05Bet pack = new Packet05Bet()
             {
-                descr = clientInfo.name,
-                bet = _bet
+                Descr = clientInfo.name,
+                Bet = _bet
             };
             NetworkComms.SendObject<Packet05Bet>
                 ("BetAnswer", serverInfo.ip, serverInfo.port, pack);
@@ -57,8 +57,8 @@ namespace CoincheClient.Network
         {
             Packet06Card pack = new Packet06Card()
             {
-                descr = clientInfo.name,
-                card = _card
+                Descr = clientInfo.name,
+                Card = _card
             };
             NetworkComms.SendObject<Packet06Card>
                 ("PlayingCardAnswer", serverInfo.ip, serverInfo.port, pack);

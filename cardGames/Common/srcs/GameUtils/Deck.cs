@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace Common.GameUtils
 {
+    [ProtoContract]
     public class Deck
     {
-        private List<Card> cards;
-        public List<Card> Cards {get;set;}
+        [ProtoMember(1)]
+        private List<Card> cards { get; set; }
         public Deck()
         {
             cards = new List<Card>();

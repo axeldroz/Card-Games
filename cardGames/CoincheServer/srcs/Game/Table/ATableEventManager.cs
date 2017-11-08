@@ -24,12 +24,13 @@ namespace CoincheServer.Game.Table
                     IsReady = true; // The game is ready
                     Console.WriteLine("Table with teams " + team.First().Name + " and " + team.Last().Name + " is about to start playing ...");
                     var firstPlayer = team.First().Player.First();
+                    bet = new Bet();
                     server.AskBet(firstPlayer, bet);
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Event Player Added");
+                throw ex;
             }
         }
 

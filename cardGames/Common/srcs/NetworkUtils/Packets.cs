@@ -17,7 +17,7 @@ namespace Common.NetworkUtils
         public class Packet00Message
         {
             [ProtoMember(1)]
-            public string message;
+            public string Message { get; set; }
         };
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Common.NetworkUtils
         public class Packet01LoginRequest
         {
             [ProtoMember(1)]
-            public string name;
+            public string Name { get; set; }
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Common.NetworkUtils
         public class Packet02LoginAnswer
         {
             [ProtoMember(1)]
-            public bool accepted;
+            public bool Accepted { get; set; }
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Common.NetworkUtils
         public class Packet04WaitGameAnswer
         {
             [ProtoMember(1)]
-            public bool accepted;   
+            public bool Accepted { get; set; }  
         }
 
         /// <summary>
@@ -66,30 +66,27 @@ namespace Common.NetworkUtils
         public class Packet05Bet
         {
             [ProtoMember(1)]
-            public string descr;
+            public string Descr { get; set; }
             [ProtoMember(2)]
-            public Bet bet;
+            public Bet Bet { get; set; }
         }
 
         [ProtoContract]
         public class Packet06Card
         {
             [ProtoMember(1)]
-            public string descr;
+            public string Descr { get; set; }
             [ProtoMember(2)]
-            public Card card;
+            public Card Card { get; set; }
         }
 
         [ProtoContract]
         public class Packet07Deck
         {
             [ProtoMember(1)]
-            public string descr;
+            public string Descr { get; set; }
             [ProtoMember(2)]
-            public Deck deck;
+            public Deck Deck { get; set; }
         }
-
-
-
     }
 }

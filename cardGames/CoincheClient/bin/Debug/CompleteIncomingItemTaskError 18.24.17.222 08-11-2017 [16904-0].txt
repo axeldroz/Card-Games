@@ -1,0 +1,30 @@
+Base Exception Type: System.InvalidOperationException: No serializer defined for type: Common.GameUtils.Bet
+   à ProtoBuf.Meta.ValueMember.BuildSerializer()
+   à ProtoBuf.Meta.MetaType.BuildSerializer()
+   à ProtoBuf.Meta.MetaType.get_Serializer()
+   à ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   à ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   à ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   à ProtoBuf.Serializer.NonGeneric.Deserialize(Type type, Stream source)
+   à NetworkCommsDotNet.DPSBase.ProtobufSerializer.DeserialiseDataObjectInt(Stream inputStream, Type resultType, Dictionary`2 options)
+   à NetworkCommsDotNet.DPSBase.DataSerializer.DeserialiseGeneralObject[T](MemoryStream receivedObjectStream, List`1 dataProcessors, Dictionary`2 options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\DPSBase\DataSerializer.cs:ligne 268
+   à NetworkCommsDotNet.DPSBase.DataSerializer.DeserialiseDataObject[T](MemoryStream receivedObjectStream, List`1 dataProcessors, Dictionary`2 options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\DPSBase\DataSerializer.cs:ligne 258
+   à NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.DeSerialize(MemoryStream incomingBytes, SendReceiveOptions options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Tools\PacketUnwrappers.cs:ligne 91
+   à NetworkCommsDotNet.NetworkComms.TriggerAllPacketHandlers(PacketHeader packetHeader, Connection connection, MemoryStream dataStream, SendReceiveOptions options, Boolean ignoreUnknownPacketTypeOverride) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 808
+   à NetworkCommsDotNet.NetworkComms.TriggerAllPacketHandlers(PacketHeader packetHeader, Connection connection, MemoryStream dataStream, SendReceiveOptions options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 788
+   à NetworkCommsDotNet.NetworkComms.CompleteIncomingItemTask(Object priorityQueueItemObj) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 371
+
+Stack Trace:    à ProtoBuf.Meta.ValueMember.BuildSerializer()
+   à ProtoBuf.Meta.MetaType.BuildSerializer()
+   à ProtoBuf.Meta.MetaType.get_Serializer()
+   à ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   à ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   à ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   à ProtoBuf.Serializer.NonGeneric.Deserialize(Type type, Stream source)
+   à NetworkCommsDotNet.DPSBase.ProtobufSerializer.DeserialiseDataObjectInt(Stream inputStream, Type resultType, Dictionary`2 options)
+   à NetworkCommsDotNet.DPSBase.DataSerializer.DeserialiseGeneralObject[T](MemoryStream receivedObjectStream, List`1 dataProcessors, Dictionary`2 options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\DPSBase\DataSerializer.cs:ligne 268
+   à NetworkCommsDotNet.DPSBase.DataSerializer.DeserialiseDataObject[T](MemoryStream receivedObjectStream, List`1 dataProcessors, Dictionary`2 options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\DPSBase\DataSerializer.cs:ligne 258
+   à NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.DeSerialize(MemoryStream incomingBytes, SendReceiveOptions options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Tools\PacketUnwrappers.cs:ligne 91
+   à NetworkCommsDotNet.NetworkComms.TriggerAllPacketHandlers(PacketHeader packetHeader, Connection connection, MemoryStream dataStream, SendReceiveOptions options, Boolean ignoreUnknownPacketTypeOverride) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 808
+   à NetworkCommsDotNet.NetworkComms.TriggerAllPacketHandlers(PacketHeader packetHeader, Connection connection, MemoryStream dataStream, SendReceiveOptions options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 788
+   à NetworkCommsDotNet.NetworkComms.CompleteIncomingItemTask(Object priorityQueueItemObj) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 371

@@ -27,7 +27,7 @@ namespace CoincheServer.Network
         {
             Packet02LoginAnswer pack = new Packet02LoginAnswer()
             {
-                accepted = true
+                Accepted = true
             };
             c.SendObject<Packet02LoginAnswer>("LoginAnswer", pack);
         }
@@ -36,7 +36,7 @@ namespace CoincheServer.Network
         {
             Packet04WaitGameAnswer pack = new Packet04WaitGameAnswer()
             {
-                accepted = true
+                Accepted = true
             };
             c.SendObject<Packet04WaitGameAnswer>("WaitGameAnswer", pack);
         }
@@ -44,26 +44,33 @@ namespace CoincheServer.Network
         {
             Packet05Bet pack = new Packet05Bet()
             {
-                descr = Common.IO.Messages.Server.BetRequest,
-                bet = bet
+                Descr = Common.IO.Messages.Server.BetRequest,
+                Bet = bet
             };
             c.SendObject<Packet05Bet>("FirstBetRequest", pack);
         }
-        public void SendBetRequest(Connection c, Common.GameUtils.Bet bet)
+        public void SendBetRequest(Connection c, Common.GameUtils.Bet _bet)
         {
-            Packet05Bet pack = new Packet05Bet()
+                Packet05Bet pack = new Packet05Bet()
+                {
+                    Descr = Common.IO.Messages.Server.BetRequest,
+                    Bet = _bet
+                };
+            try
             {
-                descr = Common.IO.Messages.Server.BetRequest,
-                bet = bet
-            };
-            c.SendObject<Packet05Bet>("BetRequest", pack);
+                c.SendObject<Packet05Bet>("BetRequest", pack);
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw ex;
+            }
         }
         public void SendBetAccepted(Connection c, Common.GameUtils.Bet bet)
         {
             Packet05Bet pack = new Packet05Bet()
             {
-                descr = Common.IO.Messages.Server.BetRequest,
-                bet = bet
+                Descr = Common.IO.Messages.Server.BetRequest,
+                Bet = bet
             };
             c.SendObject<Packet05Bet>("BetAccepted", pack);
         }
@@ -71,8 +78,8 @@ namespace CoincheServer.Network
         {
             Packet07Deck pack = new Packet07Deck()
             {
-                descr = Common.IO.Messages.Server.BetRequest,
-                deck = _deck
+                Descr = Common.IO.Messages.Server.BetRequest,
+                Deck = _deck
             };
             c.SendObject<Packet07Deck>("PlayingCardRequest", pack);
         }
