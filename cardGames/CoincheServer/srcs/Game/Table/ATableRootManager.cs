@@ -21,6 +21,11 @@ namespace CoincheServer.Game.Table
         public ATableRootManager(CServer _server)
         {
             server = _server;
+            player = new List<Player>();
+            deck = new Deck();
+            team = new List<Team>();
+            bet = new Bet();
+            handStack = new Deck();
         }
 
         /// <summary>

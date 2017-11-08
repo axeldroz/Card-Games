@@ -14,7 +14,7 @@ namespace Common.GameUtils
         private string name;
         private int status; // 0 = afk, 1 = ready for a game
         private NetworkCommsDotNet.Connections.Connection connection;
-
+        private bool hasPlay;
         /* gérer par TableManager */
         private int score;
         //private int teamscore;
@@ -67,7 +67,7 @@ namespace Common.GameUtils
                 score = value;
             }
         }
-        public int Teamscore
+        /*public int Teamscore
         {
             get
             {
@@ -77,7 +77,7 @@ namespace Common.GameUtils
             {
                 teamscore = value;
             }
-        }
+        }*/
         public int Status
         {
             get
@@ -120,6 +120,18 @@ namespace Common.GameUtils
             set
             {
                 connection = value;
+            }
+        }
+
+        public bool HasPlay
+        {
+            get
+            {
+                return hasPlay;
+            }
+            set
+            {
+                hasPlay = value;
             }
         }
         
