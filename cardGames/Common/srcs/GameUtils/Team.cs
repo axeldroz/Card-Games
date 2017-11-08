@@ -23,11 +23,62 @@ namespace Common.GameUtils
             full = false;
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public List<Player> Player { get; set; }
-        public int Score { get; set; }
-        public bool Full { get; set; }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public List<Player> Player
+        {
+            get
+            {
+                return player;
+            }
+            set
+            {
+                player = value;
+            }
+        }
+
+        public int Score
+        {
+            get
+            {
+                return score;
+            }
+            set
+            {
+                score = value;
+            }
+        }
+        public bool Full
+        {
+            get
+            {
+                return full;
+            }
+            set
+            {
+                full = value;
+            }
+        }
 
     }
 }
