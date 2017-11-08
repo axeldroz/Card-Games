@@ -26,8 +26,18 @@ namespace CoincheServer.Game.Room
 
             room.Add(player);
             Game.Table.TableManager t = tables.Last();
-            //t.AddPlayer(player);
-            return (true);
+            try
+            {
+                t.AddPlayer(player);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                t = new Table.TableManager(server);
+                tables.Add(t);
+                t.AddPlayer(player);
+            }
+                return (true);
         }
     }
 }

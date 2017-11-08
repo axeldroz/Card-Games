@@ -30,7 +30,6 @@ namespace CoincheServer.Game.Table
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message + " // Source : " + ex.Source);
-                throw ex;
             }
         }
 
