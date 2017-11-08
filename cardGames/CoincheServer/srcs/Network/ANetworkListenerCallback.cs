@@ -58,9 +58,14 @@ namespace CoincheServer.Network
         }
 
         protected void WhenLoginRequest(PacketHeader packetHeader, Connection connection, 
-            Packet01LoginRequest incomingObject)
+            Packet01LoginRequest pack)
         {
-            throw new NotImplementedException();
+            Common.GameUtils.Player player = new Common.GameUtils.Player
+            {
+                Name = pack.name,
+                Connection = connection
+            };
+            server.Room.addPlayer(player);
         }
 
         protected void WhenWaitGameRequest(PacketHeader packetHeader, Connection connection, 

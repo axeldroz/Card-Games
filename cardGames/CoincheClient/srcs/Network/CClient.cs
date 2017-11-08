@@ -35,7 +35,14 @@ namespace CoincheClient.Network
         {
             Common.GameUtils.Bet bet;
 
-            
+            bet = Common.IO.InputManager.Client.CreateBet();
+            SendBetAnswer(bet);
+        }
+
+        /* to finish */
+        public void PlayCard()
+        {
+            Common.GameUtils.Card card;
         }
     }
 }

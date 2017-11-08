@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game
+namespace Common.srcs.GameUtils
 {
-    public class RoomManager
+    public class Table
     {
-        public RoomManager()
-        {
-
-        }
     }
 }

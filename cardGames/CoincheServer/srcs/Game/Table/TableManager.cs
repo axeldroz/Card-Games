@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using CoincheServer;
 using System.IO;
 
-namespace Game
+namespace CoincheServer.Game.Table
 {
     public class TableManager : GameManagerServer
     {
@@ -53,6 +53,13 @@ namespace Game
                 return (-1);
             }
             
+        }
+
+        public bool IsFull()
+        {
+            if (team.First().full && team.Last().full)
+                return (true);
+            return (false);
         }
         
 
