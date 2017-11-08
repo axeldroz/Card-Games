@@ -23,8 +23,12 @@ namespace CoincheServer.Game.Table
                 Console.WriteLine("Table with teams " + team.First().Name + " and " + team.Last().Name + " is about to start playing ...");
                 var firstPlayer = team.First().Player.First();
                 server.AskBet(firstPlayer, bet);
-                firstPlayer.HasPlay = true;
             }
+        }
+
+        public void EventBetAdded(Player player)
+        {
+
         }
     }
 }

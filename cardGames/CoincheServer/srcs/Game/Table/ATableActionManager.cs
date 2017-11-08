@@ -18,13 +18,7 @@ namespace CoincheServer.Game.Table
         public void DoAddPlayer(Player player)
         {
             Team tmp = FindTeamAvailable();
-            if (tmp == null && IsReady == false) // Check if a Team is available.
-            {
-                IsReady = true;
-                var firstPlayer = team.First().Player.First();
-                server.AskBet(firstPlayer, bet);
-            }
-            else if (tmp.Player.Count < 2) // Check if the team is not full.
+            if (tmp != null) // Check if the team is not full.
             {
                 tmp.Player.Add(player);
                 Console.WriteLine("Player " + player.Name + "has join the team " + tmp.Name + "!");
@@ -33,11 +27,21 @@ namespace CoincheServer.Game.Table
                     tmp.Full = true; // the team is full.
                 }
             }
+            else
+            {
+                throw new Exception("Error: Couldn't add new player, teams are full or null");
+            }
         }
 
         public void DoAddCard(Player player)
         {
 
+        }
+
+        public void DoAddBet(Player player, Bet newBet)
+        {
+            bet = newBet;
+            EventBetAdded(player);
         }
     }
 }

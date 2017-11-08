@@ -24,7 +24,6 @@ namespace CoincheServer.Game.Table
             player = new List<Player>();
             deck = new Deck();
             team = new List<Team>();
-            bet = new Bet();
             handStack = new Deck();
         }
 
