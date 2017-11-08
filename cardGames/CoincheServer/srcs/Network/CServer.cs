@@ -12,5 +12,19 @@ namespace CoincheServer.Network
         {
             InitSending(this);
         }
+
+        /*
+         * Function For TableManager Caller
+         */ 
+        public void AskABet(Common.GameUtils.Player player, Common.GameUtils.Bet bet)
+        {
+            SendBetRequest(player.Connection, bet);
+        }
+
+        public void AskPlayCard(Common.GameUtils.Player player)
+        {
+            SendPlayingCardRequest(player.Connection, player.Deck);
+        }
+
     }
 }
