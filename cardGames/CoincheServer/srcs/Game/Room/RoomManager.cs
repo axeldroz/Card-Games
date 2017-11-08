@@ -11,7 +11,6 @@ namespace CoincheServer.Game.Room
     {
         public RoomManager(CoincheServer.Network.CServer _server) : base(_server)
         {
-
         }
 
         /*

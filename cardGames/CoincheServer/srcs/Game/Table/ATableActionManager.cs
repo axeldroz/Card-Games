@@ -20,6 +20,7 @@ namespace CoincheServer.Game.Table
             Team tmp = FindTeamAvailable();
             if (tmp != null) // Check if the team is not full.
             {
+                Console.WriteLine("TableActionManager.DoAddPLayer()");
                 tmp.Player.Add(player);
                 Console.WriteLine("Player " + player.Name + "has join the team " + tmp.Name + "!");
                 if (tmp.Player.Count == 2)

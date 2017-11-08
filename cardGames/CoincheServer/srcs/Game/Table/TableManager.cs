@@ -25,6 +25,7 @@ namespace CoincheServer.Game.Table
         {
             try
             {
+                Console.WriteLine("TableManager.AddPlayer()");
                 DoAddPlayer(player);
             }
             catch (Exception ex)

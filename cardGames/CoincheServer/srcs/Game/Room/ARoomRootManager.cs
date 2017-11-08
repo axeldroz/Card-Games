@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoincheServer.Network;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,15 @@ namespace CoincheServer.Game.Room
         public ARoomRootManager(CoincheServer.Network.CServer _server)
         {
             server = _server;
-            room = new Common.GameUtils.Room();    
+            room = new Common.GameUtils.Room();
+            tables = new List<Table.TableManager>();
+            tables.Add(new Table.TableManager(server));
+
+        }
+
+        public void Init(CServer serv)
+        {
+            
         }
     }
 }

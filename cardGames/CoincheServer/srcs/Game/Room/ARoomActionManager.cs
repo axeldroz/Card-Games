@@ -26,10 +26,15 @@ namespace CoincheServer.Game.Room
 
             Console.WriteLine("RoomActionManager.DoAddPlayer");
             room.Add(player);
-            Game.Table.TableManager t = tables.Last();
+            Game.Table.TableManager t;
             try
             {
+                t = tables.Last();
                 t.AddPlayer(player);
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine(e.Message);
             }
             catch (Exception e)
             {
