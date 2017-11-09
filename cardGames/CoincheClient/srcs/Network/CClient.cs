@@ -45,7 +45,7 @@ namespace CoincheClient.Network
             //Thread.Sleep(200);
             Task<int> task2 = null;
             if (lastbet.points > 0)
-                task2 = new Task<int>(new Func<int>(() => Common.IO.OutputManager.Standard.Display.LastBet(lastbet)));
+                task2 = new Task<int>(new Func<int>(() => Common.IO.OutputManager.Standard.Display.LastBet2(lastbet)));
             Task task3 = new Task<int>(new Func<int>(() => RunBet()));
 
             task.Start();
@@ -65,7 +65,7 @@ namespace CoincheClient.Network
             return (0);
         }
 
-        private int RunDisplayList(List<Card> cards)
+        /*private int RunDisplayList(List<Card> cards)
         {
             int i = 0;
             Console.WriteLine("CardCount4=" + cards.Count + "");
@@ -80,6 +80,24 @@ namespace CoincheClient.Network
                 Console.WriteLine(" point = ", c.point);
                 ++i;
             }
+            return (0);
+        }*/
+        private int RunDisplayList(List<Card> cards)
+        {
+            int i = 0;
+            Console.WriteLine("CardCount4=" + cards.Count + "");
+            Card c;
+            while (i < cards.Count)
+            {
+                c = cards.ElementAt(i);
+                Console.Write("[" + (i + 1));
+                Console.Write(": " + c.suit);
+                Console.Write(" " + c.number + "] ");
+                //Console.Write(" Player = ", c.player.Name);
+                //Console.WriteLine(" point = ", c.point);
+                ++i;
+            }
+            Console.WriteLine();
             return (0);
         }
         /* to finish */

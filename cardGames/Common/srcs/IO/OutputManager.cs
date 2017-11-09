@@ -39,6 +39,14 @@ namespace Common.IO
                     Console.WriteLine("Player = " + bet.player.Name);
                     return (0);
                 }
+                public static int LastBet2(Common.GameUtils.Bet bet)
+                {
+                    Console.Write("Last Bet : ");
+                    Console.WriteLine(bet.player.Name + " has bet" + bet.points
+                        + " on " + bet.suit);
+
+                    return (0);
+                }
                 public static void Card(GameUtils.Card c, int i)
                 {
                     Console.WriteLine("Card n" + i);

@@ -39,7 +39,7 @@ namespace Common.GameUtils
         {
             int sui = 1;
             int i = 0;
-            int num = 0;
+            int num = 1;
 
             while (sui <= 4)
             {
@@ -49,7 +49,7 @@ namespace Common.GameUtils
                     ++i;
                     ++num;
                 }
-                num = 0;
+                num = 1;
                 ++sui;
             }
             Console.WriteLine("Number Of Cards : " + cards.Count);
@@ -101,6 +101,7 @@ namespace Common.GameUtils
                     c.pointA = 4;
                     break;
             }
+            c.suit = suit;
             return (c);
         }
 
