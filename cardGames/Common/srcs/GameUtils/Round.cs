@@ -62,39 +62,39 @@ namespace Common.GameUtils
         /// </summary>
         public void WhoWonRound()
         {
-            if (cards.Count == 8)
+            if (cards.Count == 8 && !Asset.Equals(null))
             {
                 int ScoreTeamRed = 0;
                 int ScoreTeamBlue = 0;
-                // Check all cards of the plit.
-                foreach (var elem in cards)
+
+                try
                 {
-                    // Check if the card is the Asset of the plit.
-                    if (elem.suit == Asset.suit && elem.number == Asset.number)
+                    // Check all cards of the plit.
+                    foreach (var elem in cards)
                     {
-                        elem.player.Score += elem.pointA;
-                        elem.player.Team.Score += elem.pointA;
-                        ScoreTeamRed += elem.player.Team.Name == "Red" ? elem.pointA : 0;
-                        ScoreTeamBlue += elem.player.Team.Name == "Blue" ? elem.pointA : 0;
+                        // Check if the card is the Asset of the plit.
+                        if (elem.suit == Asset.suit && elem.number == Asset.number)
+                        {
+                            elem.player.Score += elem.pointA;
+                            elem.player.Team.Score += elem.pointA;
+                            ScoreTeamRed += elem.player.Team.Name == "Red" ? elem.pointA : 0;
+                            ScoreTeamBlue += elem.player.Team.Name == "Blue" ? elem.pointA : 0;
+                        }
+                        else // Else the card is not an asset so it takes usual points.
+                        {
+                            elem.player.Score += elem.point;
+                            elem.player.Team.Score += elem.point;
+                            ScoreTeamRed += elem.player.Team.Name == "Red" ? elem.point : 0;
+                            ScoreTeamBlue += elem.player.Team.Name == "Blue" ? elem.point : 0;
+                        }
                     }
-                    else // Else the card is not an asset so it takes usual points.
-                    {
-                        elem.player.Score += elem.point;
-                        elem.player.Team.Score += elem.point;
-                        ScoreTeamRed += elem.player.Team.Name == "Red" ? elem.point : 0;
-                        ScoreTeamBlue += elem.player.Team.Name == "Blue" ? elem.point : 0;
-                    }
                 }
-                if (ScoreTeamRed > ScoreTeamBlue)
+                catch (ArgumentNullException ex)
                 {
-                    IO.OutputManager.Debug.Display("Red Team Won the plit");
-                    // Put action to do after end of plit. ClearTable() for example ?
+                    throw ex;
                 }
-                else if (ScoreTeamBlue > ScoreTeamRed)
-                {
-                    IO.OutputManager.Debug.Display("Blue Team Won the plit");
-                    // Put action to do after end of plit. ClearTable() for example ?
-                }
+                IO.OutputManager.Debug.Display((ScoreTeamRed > ScoreTeamBlue) ? "Red Team Won the plit" : "Blue Team Won the plit");
+                // Put action to do after end of plit. ClearTable() for example ?
             }
         }
 
@@ -103,16 +103,24 @@ namespace Common.GameUtils
         /// </summary>
         public void WhoWonBet()
         {
-            foreach (var elem in cards)
+            try
             {
-                if (elem.suit == Asset.suit && elem.number == Asset.number)
+                foreach (var elem in cards)
                 {
-                    // Je donne au joueur et à son équipe le nombre de point que pèse le Bet (JE SUIS PAS SUR DE LA REGLE à VERIFIER)
-                    elem.player.Score += CurrentBet.points;
-                    elem.player.Team.Score += CurrentBet.points;
-                    IO.OutputManager.Debug.Display("Player " + elem.player.Name + " of Team " + elem.player.Team.Name + " won the bet of " + CurrentBet.points + " points !!");
+                    if (elem.suit == Asset.suit && elem.number == Asset.number)
+                    {
+                        // Je donne au joueur et à son équipe le nombre de point que pèse le Bet (JE SUIS PAS SUR DE LA REGLE à VERIFIER)
+                        elem.player.Score += CurrentBet.points;
+                        elem.player.Team.Score += CurrentBet.points;
+                        IO.OutputManager.Debug.Display("Player " + elem.player.Name + " of Team " + elem.player.Team.Name + " won the bet of " + CurrentBet.points + " points !!");
+                    }
                 }
             }
+            catch (ArgumentNullException ex)
+            {
+                throw ex;
+            }
+
         }
 
 
