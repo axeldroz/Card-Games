@@ -41,11 +41,12 @@ namespace CoincheClient.Network
         protected void WhenBetRequest(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {
             Console.WriteLine("Première étape");
-            client.Bet();
+            Console.WriteLine("CardCount3=" + incomingObject.Cards.Count + "");
+            client.Bet(incomingObject.Bet, incomingObject.Cards);
         }
         protected void WhenFirstBetRequest(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {
-            client.Bet();
+            //client.Bet();
         }
         protected void WhenBetAccepted(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {
@@ -54,6 +55,12 @@ namespace CoincheClient.Network
         protected void WhenPlayingCardRequest(PacketHeader packetHeader, Connection connection, Packet07Deck incomingObject)
         {
             client.PlayCard();
+        }
+        protected void WhenShowCards(PacketHeader packetHeader, Connection connection, Packet07Deck pack)
+        {
+            Common.IO.OutputManager.Debug.Display("ANetworkListenerCallback", "WhenShowCards");
+            Console.WriteLine(pack.Descr);
+            Common.IO.OutputManager.Standard.Display.ListCard(pack.Deck.cards);
         }
     }
 }

@@ -27,11 +27,43 @@ namespace Common.IO
             {
                 public static void Bet(Common.GameUtils.Bet bet)
                 {
-                    Console.Write("Bet : ");
-                    Console.Write("Suit = " + bet.suit);
-                    Console.Write("Points = " + bet.points);
+                    Console.WriteLine("Bet : ");
+                    Console.WriteLine("Suit = " + bet.suit);
+                    Console.WriteLine("Points = " + bet.points);
+                }
+                public static int LastBet(Common.GameUtils.Bet bet)
+                {
+                    Console.WriteLine("Last Bet : ");
+                    Console.WriteLine("Suit = " + bet.suit);
+                    Console.WriteLine("Points = " + bet.points);
+                    Console.WriteLine("Player = " + bet.player.Name);
+                    return (0);
+                }
+                public static void Card(GameUtils.Card c, int i)
+                {
+                    Console.WriteLine("Card n" + i);
+                    Console.WriteLine("Suit = " + c.suit);
+                    Console.WriteLine("Number = " + c.number);
+                    Console.WriteLine("Player = ", c.player.Name);
+                    Console.WriteLine("point = ", c.point);
+                }
 
-
+                public static int ListCard(List<GameUtils.Card> l)
+                {
+                    int i = 0;
+                    Console.WriteLine("CardCount4=" + l.Count + "");
+                    GameUtils.Card c;
+                    while (i < l.Count)
+                    {
+                        c = l.ElementAt(i);
+                        Console.WriteLine("Card n" + i);
+                        Console.WriteLine("Suit = " + c.suit);
+                        Console.WriteLine("Number = " + c.number);
+                        Console.WriteLine("Player = ", c.player.Name);
+                        Console.WriteLine("point = ", c.point);
+                        ++i;
+                    }
+                    return (0);
                 }
             }
             public static class Server

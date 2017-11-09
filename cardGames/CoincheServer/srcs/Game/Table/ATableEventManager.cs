@@ -21,11 +21,7 @@ namespace CoincheServer.Game.Table
             {
                 if (FindTeamAvailable() == null)
                 {
-                    IsReady = true; // The game is ready
-                    Console.WriteLine("Table with teams " + team.First().Name + " and " + team.Last().Name + " is about to start playing ...");
-                    var firstPlayer = team.First().Player.First();
-                    bet = new Bet();
-                    server.AskBet(firstPlayer, bet);
+                    EventGameIsReady();
                 }
             }
             catch (Exception ex)
@@ -34,11 +30,30 @@ namespace CoincheServer.Game.Table
             }
         }
 
+        public void EventGameIsReady()
+        {
+            try
+            {
+                IsReady = true; // The game is ready
+                Console.WriteLine("Table with teams " + team.First().Name + " and " + team.Last().Name + " is about to start playing ...");
+                Deck.Generate();
+                Deck.Distrib(team);
+                var firstPlayer = team.First().Player.First();
+                bet = new Bet();
+                server.AskBet(firstPlayer, bet);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception : " + e.ToString());
+            }
+        }
+
         public void EventBetAdded(Player player, Bet _bet)
         {
             Common.IO.OutputManager.Debug.Display("ARoomEventManager", "EventAddBet() : called");
             Player nextPlayer = NextPlayer(player);
             Common.IO.OutputManager.Debug.DisplayVar("nextPlayer is null", nextPlayer == null);
+            //server.SendCards(nextPlayer); // always before bet
             server.AskBet(nextPlayer, _bet);
         }
     }

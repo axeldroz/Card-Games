@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.GameUtils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,16 +20,22 @@ namespace CoincheServer.Network
         public void AskBet(Common.GameUtils.Player player, Common.GameUtils.Bet bet)
         {
             Common.IO.OutputManager.Debug.Display("CServer", "AskBet() : called");
+            Console.WriteLine("CardCount=" + player.Deck.cards.Count + "");
             if (bet.points == 0)
             {
                 Common.IO.OutputManager.Debug.Display("Problem bet = 0");
-                SendBetRequest(player.Connection, new Common.GameUtils.Bet());
+                SendBetRequest(player.Connection, new Common.GameUtils.Bet(), player.Deck.cards);
             }
             else
             {
-                SendBetRequest(player.Connection, bet);
+                SendBetRequest(player.Connection, bet, player.Deck.cards);
             }
-        }   
+        }
+
+        public void SendCards(Player p)
+        {
+            SendCardsAnswer(p.Connection, p.Deck);
+        }
 
         public void AskPlayCard(Common.GameUtils.Player player)
         {

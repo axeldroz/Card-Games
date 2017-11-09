@@ -31,6 +31,8 @@ namespace CoincheClient.Network
                 <Packet05Bet>("BetAccepted", this.WhenBetAccepted);
             NetworkComms.AppendGlobalIncomingPacketHandler
                 <Packet07Deck>("PlayingCardRequest", this.WhenPlayingCardRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet07Deck>("ShowCards", this.WhenShowCards);
         }
 
     }

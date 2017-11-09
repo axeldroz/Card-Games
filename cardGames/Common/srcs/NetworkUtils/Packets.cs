@@ -69,6 +69,10 @@ namespace Common.NetworkUtils
             public string Descr { get; set; }
             [ProtoMember(2)]
             public Bet Bet { get; set; }
+            [ProtoMember(3
+                
+                )]
+            public List<Card> Cards { get; set; }
         }
 
         [ProtoContract]

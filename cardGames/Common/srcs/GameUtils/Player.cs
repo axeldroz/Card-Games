@@ -42,7 +42,7 @@ namespace Common.GameUtils
             Score = 0;
             //teamscore = 0;
             Status = 0;
-            Deck = null;
+            Deck = new Deck();
             Team = null;
             TableId = 0;
         }

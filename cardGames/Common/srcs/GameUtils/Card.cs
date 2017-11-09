@@ -18,5 +18,7 @@ namespace Common.GameUtils
         public Player player; // player qui joue la carte
         [ProtoMember(4)]
         public int point; // point que vaut la carte
+        [ProtoMember(5)]
+        public int pointA; // point que vaut la carte
     }
 }

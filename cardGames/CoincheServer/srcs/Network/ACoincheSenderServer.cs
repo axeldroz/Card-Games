@@ -49,15 +49,16 @@ namespace CoincheServer.Network
             };
             c.SendObject<Packet05Bet>("FirstBetRequest", pack);
         }
-        public void SendBetRequest(Connection c, Common.GameUtils.Bet _bet)
+        public void SendBetRequest(Connection c, Common.GameUtils.Bet _bet, List<Common.GameUtils.Card> _cards)
         {
             Common.IO.OutputManager.Debug.Display("CServerSender", "SendBetRequest() : called");
             Packet05Bet pack = new Packet05Bet()
-                {
-                    Descr = Common.IO.Messages.Server.BetRequest,
-                    Bet = _bet
+            {
+                Descr = Common.IO.Messages.Server.BetRequest,
+                Bet = _bet,
+                    Cards = _cards
                 };
-
+            Console.WriteLine("CardCount2=" + pack.Cards.Count + "");
             try
             {
                 c.SendObject<Packet05Bet>("BetRequest", pack);
@@ -89,6 +90,15 @@ namespace CoincheServer.Network
                 Deck = _deck
             };
             c.SendObject<Packet07Deck>("PlayingCardRequest", pack);
+        }
+        public void SendCardsAnswer(Connection c, Common.GameUtils.Deck _deck)
+        {
+            Packet07Deck pack = new Packet07Deck()
+            {
+                Descr = "Here is your Cards :",
+                Deck = _deck
+            };
+            c.SendObject<Packet07Deck>("ShowCards", pack);
         }
     }
 }

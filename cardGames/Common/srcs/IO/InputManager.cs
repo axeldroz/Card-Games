@@ -19,7 +19,7 @@ namespace Common.IO
                 return (name);
             }
 
-            private static string GetSuit(int number)
+            public static string GetSuit(int number)
             {
                 string str;
 
