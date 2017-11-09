@@ -56,6 +56,7 @@
     <Compile Include="srcs\GameUtils\Deck.cs" />
     <Compile Include="srcs\GameUtils\Player.cs" />
     <Compile Include="srcs\GameUtils\Room.cs" />
+    <Compile Include="srcs\GameUtils\Round.cs" />
     <Compile Include="srcs\GameUtils\Table.cs" />
     <Compile Include="srcs\GameUtils\Team.cs" />
     <Compile Include="srcs\IO\InputManager.cs" />
