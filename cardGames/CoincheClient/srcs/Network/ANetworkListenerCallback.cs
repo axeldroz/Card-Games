@@ -56,7 +56,7 @@ namespace CoincheClient.Network
             Packet07Deck pack)
         {
             Console.WriteLine(pack.Descr);
-            client.PlayCard(pack.Deck.cards);
+            client.PlayCard(pack.Deck.cards, pack.Deck2.cards);
         }
         protected void WhenShowCards(PacketHeader packetHeader, Connection connection, Packet07Deck pack)
         {

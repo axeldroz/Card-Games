@@ -101,26 +101,46 @@ namespace CoincheClient.Network
             return (0);
         }
         /* to finish */
-        public void PlayCard(List<Card> deck)
+        public void PlayCard(List<Card> deck, List<Card> deckRound)
         {
             Common.GameUtils.Card card;
             Console.WriteLine("CClient.PlayCard()");
             Console.WriteLine("CardCount3=" + deck.Count + "");
             Console.WriteLine("Your cards in your hand :");
             Task<int> task = new Task<int>(new Func<int>(() => RunDisplayList(deck)));
-            Task<int> task2 = new Task<int>(new Func<int>(() => RunCard(deck.Count)));
+            Task<int> task2 = new Task<int>(new Func<int>(() => RunDisplayListRound(deckRound)));
+            Task<int> task3 = new Task<int>(new Func<int>(() => RunCard(deck.Count)));
             task.Start();
             Thread.Sleep(200);
             task2.Start();
+            Thread.Sleep(200);
+            task3.Start();
 
         }
-        
+
+        private int RunDisplayListRound(List<Card> cards)
+        {
+            int i = 0;
+            Console.WriteLine("Round Deck : ");
+            Card c;
+            while (i < cards.Count)
+            {
+                c = cards.ElementAt(i);
+
+                Console.WriteLine(c.player.Name + " -> [" + c.suit + " " + c.number + "]");
+                //Console.Write(" Player = ", c.player.Name);
+                //Console.WriteLine(" point = ", c.point);
+                ++i;
+            }
+            return (0);
+        }
+
         private int RunCard(int nb)
         {
             int a = 0;
             Console.Write("Number of the card you want to play ? ");
             a = Int32.Parse(Console.ReadLine());
-            while (a < 1 && a > nb)
+            while (a < 1 || a > nb)
             {
                 Console.WriteLine("You have to choose a number between 1-"
                     + nb);

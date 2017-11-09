@@ -37,9 +37,9 @@ namespace CoincheServer.Network
             SendCardsAnswer(p.Connection, p.Deck);
         }
 
-        public void AskPlayCard(Common.GameUtils.Player player)
+        public void AskPlayCard(Common.GameUtils.Player player, Deck deckRound)
         {
-            SendPlayingCardRequest(player.Connection, player.Deck);
+            SendPlayingCardRequest(player.Connection, player.Deck, deckRound);
         }
 
     }

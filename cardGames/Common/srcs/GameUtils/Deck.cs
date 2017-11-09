@@ -139,5 +139,18 @@ namespace Common.GameUtils
                 }
             }
         }
+        public void Distrib(List<Team> teams, int nb)
+        {
+            foreach (Team t in teams)
+            {
+                int i = 0;
+                while (i < nb)
+                {
+                    t.Player.First().Deck.cards.Add(TakeCard());
+                    t.Player.Last().Deck.cards.Add(TakeCard());
+                    ++i;
+                }
+            }
+        }
     }
 }

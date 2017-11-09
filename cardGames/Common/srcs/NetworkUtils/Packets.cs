@@ -99,7 +99,9 @@ namespace Common.NetworkUtils
             [ProtoMember(1)]
             public string Descr { get; set; }
             [ProtoMember(2)]
-            public Deck Deck { get; set; }
+            public Deck Deck { get; set; } // Joueur
+            [ProtoMember(3)]
+            public Deck Deck2 { get; set; } // GameDeck
         }
     }
 }

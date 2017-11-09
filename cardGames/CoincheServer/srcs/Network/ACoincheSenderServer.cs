@@ -82,12 +82,13 @@ namespace CoincheServer.Network
             };
             c.SendObject<Packet05Bet>("BetAccepted", pack);
         }
-        public void SendPlayingCardRequest(Connection c, Common.GameUtils.Deck _deck)
+        public void SendPlayingCardRequest(Connection c, Common.GameUtils.Deck _deck, Common.GameUtils.Deck _deckRound)
         {
             Packet07Deck pack = new Packet07Deck()
             {
                 Descr = Common.IO.Messages.Server.BetRequest,
-                Deck = _deck
+                Deck = _deck,
+                Deck2 = _deckRound
             };
             c.SendObject<Packet07Deck>("PlayingCardRequest", pack);
         }

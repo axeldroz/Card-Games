@@ -44,6 +44,9 @@ namespace CoincheServer.Game.Table
 
         public void DoAddCard(Player player, int idCard)
         {
+            Card c = player.Deck.cards.ElementAt(idCard);
+            c.player = player;
+            DeckRound.cards.Add(c);
             player.Deck.cards.RemoveAt(idCard);
             EventCardAdded(player);
         }

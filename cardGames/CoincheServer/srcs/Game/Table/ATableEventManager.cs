@@ -37,7 +37,7 @@ namespace CoincheServer.Game.Table
                 IsReady = true; // The game is ready
                 Console.WriteLine("Table with teams " + team.First().Name + " and " + team.Last().Name + " is about to start playing ...");
                 Deck.Generate();
-                Deck.Distrib(team);
+                Deck.Distrib(team, 2);
                 var firstPlayer = team.First().Player.First();
                 bet = new Bet();
                 server.AskBet(firstPlayer, bet);
@@ -60,7 +60,7 @@ namespace CoincheServer.Game.Table
             {
                 Player firstPlayer = team.First().Player.First();
                 //Player firstPlayer = bet.player;
-                server.AskPlayCard(firstPlayer);
+                server.AskPlayCard(firstPlayer, DeckRound);
             }
         }
 
@@ -70,12 +70,13 @@ namespace CoincheServer.Game.Table
             Player nextPlayer = NextPlayer(player);
             Common.IO.OutputManager.Debug.DisplayVar("nextPlayer is null", nextPlayer == null);
             if (nextPlayer != null)
-                server.AskPlayCard(nextPlayer);
+                server.AskPlayCard(nextPlayer, DeckRound);
             else
             {
                 Player firstPlayer = team.First().Player.First();
+                //DeckRound.Clear();
                 if (firstPlayer.Deck.cards.Count > 0)
-                    server.AskPlayCard(firstPlayer);
+                    server.AskPlayCard(firstPlayer, DeckRound);
                 else
                 {
                     // jeu finis et on compte les points
