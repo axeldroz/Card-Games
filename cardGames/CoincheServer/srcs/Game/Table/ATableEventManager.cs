@@ -54,7 +54,33 @@ namespace CoincheServer.Game.Table
             Player nextPlayer = NextPlayer(player);
             Common.IO.OutputManager.Debug.DisplayVar("nextPlayer is null", nextPlayer == null);
             //server.SendCards(nextPlayer); // always before bet
-            server.AskBet(nextPlayer, _bet);
+            if (nextPlayer != null)
+                server.AskBet(nextPlayer, _bet);
+            else
+            {
+                Player firstPlayer = team.First().Player.First();
+                //Player firstPlayer = bet.player;
+                server.AskPlayCard(firstPlayer);
+            }
+        }
+
+        public void EventCardAdded(Player player)
+        {
+            Common.IO.OutputManager.Debug.Display("ARoomEventManager", "EventCardAdded() : called");
+            Player nextPlayer = NextPlayer(player);
+            Common.IO.OutputManager.Debug.DisplayVar("nextPlayer is null", nextPlayer == null);
+            if (nextPlayer != null)
+                server.AskPlayCard(nextPlayer);
+            else
+            {
+                Player firstPlayer = team.First().Player.First();
+                if (firstPlayer.Deck.cards.Count > 0)
+                    server.AskPlayCard(firstPlayer);
+                else
+                {
+                    // jeu finis et on compte les points
+                }
+            }
         }
     }
 }

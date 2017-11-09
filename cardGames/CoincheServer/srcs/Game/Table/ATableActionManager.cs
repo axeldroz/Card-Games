@@ -35,16 +35,17 @@ namespace CoincheServer.Game.Table
             }
         }
 
-        public void DoAddCard(Player player)
-        {
-
-        }
-
         public void DoAddBet(Bet newBet)
         {
             Common.IO.OutputManager.Debug.Display("ATableActionManager", "DoAddBet() : called");
             bet = newBet;
             EventBetAdded(newBet.player, newBet);
+        }
+
+        public void DoAddCard(Player player, int idCard)
+        {
+            player.Deck.cards.RemoveAt(idCard);
+            EventCardAdded(player);
         }
     }
 }

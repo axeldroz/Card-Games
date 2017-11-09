@@ -55,14 +55,13 @@ namespace CoincheClient.Network
             Common.IO.OutputManager.Debug.Display("ACoincheSenderClient", "SendBetAnswer() : sended !");
         } 
 
-        public void SendPlayingCardAnswer(Common.GameUtils.Card _card)
+        public void SendPlayingCardAnswer(int cardId)
         {
-            Packet06Card pack = new Packet06Card()
+            Packet08CardId pack = new Packet08CardId
             {
-                Descr = clientInfo.name,
-                Card = _card
+                CardId = cardId
             };
-            NetworkComms.SendObject<Packet06Card>
+            NetworkComms.SendObject<Packet08CardId>
                 ("PlayingCardAnswer", serverInfo.ip, serverInfo.port, pack);
         }
     }

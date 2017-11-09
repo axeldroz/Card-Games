@@ -52,9 +52,11 @@ namespace CoincheClient.Network
         {
             throw new NotImplementedException();
         }
-        protected void WhenPlayingCardRequest(PacketHeader packetHeader, Connection connection, Packet07Deck incomingObject)
+        protected void WhenPlayingCardRequest(PacketHeader packetHeader, Connection connection,
+            Packet07Deck pack)
         {
-            client.PlayCard();
+            Console.WriteLine(pack.Descr);
+            client.PlayCard(pack.Deck.cards);
         }
         protected void WhenShowCards(PacketHeader packetHeader, Connection connection, Packet07Deck pack)
         {

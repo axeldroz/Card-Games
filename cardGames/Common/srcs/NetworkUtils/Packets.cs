@@ -85,6 +85,15 @@ namespace Common.NetworkUtils
         }
 
         [ProtoContract]
+        public class Packet08CardId
+        {
+            [ProtoMember(1)]
+            public int CardId { get; set; }
+
+        }
+
+
+        [ProtoContract]
         public class Packet07Deck
         {
             [ProtoMember(1)]

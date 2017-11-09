@@ -56,5 +56,13 @@ namespace CoincheServer.Game.Room
             t.AddBet(bet);
             return (true);
         }
+        public bool DoAddCard(Player player, int cardId)
+        {
+            Common.IO.OutputManager.Debug.Display("ARoomActionManager", "DoAddCard() : called");
+            Game.Table.TableManager t = FindTable(player);
+            Common.IO.OutputManager.Debug.DisplayVar("table is null", t == null);
+            t.AddCard(player, cardId);
+            return (true);
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace CoincheServer.Network
             NetworkComms.AppendGlobalIncomingPacketHandler
                 <Packet05Bet>("BetAnswer", this.WhenBetAnswer);
             NetworkComms.AppendGlobalIncomingPacketHandler
-                <Packet07Deck>("PlayingCardAnswer", this.WhenPlayingCardAnswer);
+                <Packet08CardId>("PlayingCardAnswer", this.WhenPlayingCardAnswer);
         }
 
     }

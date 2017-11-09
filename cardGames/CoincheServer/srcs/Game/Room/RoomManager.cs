@@ -41,5 +41,14 @@ namespace CoincheServer.Game.Room
             if (DoAddBet(bet))
                 EventBetAdded(bet);
         }
+
+        public void AddCard(Connection c, int cardId)
+        {
+            Common.IO.OutputManager.Debug.Display("RoomManager", "AddCard() : called");
+            Player p = FindPlayer(c);
+            //Common.IO.OutputManager.Debug.DisplayVar("p.TableID", "" + p.TableId);
+            if (DoAddCard(p, cardId)) { }
+                EventCardAdded(p);
+        }
     }
 }

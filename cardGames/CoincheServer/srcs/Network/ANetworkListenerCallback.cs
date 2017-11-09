@@ -82,9 +82,11 @@ namespace CoincheServer.Network
             server.Room.AddBet(connection, bet);
         }
         protected void WhenPlayingCardAnswer(PacketHeader packetHeader, Connection connection, 
-            Packet07Deck incomingObject)
+            Packet08CardId pack)
         {
-            throw new NotImplementedException();
+            Common.IO.OutputManager.Debug.Display("ANetworkListenerCallback", "WhenPlayCardAnswer : received");
+
+            server.Room.AddCard(connection, pack.CardId);
         }
 
     }

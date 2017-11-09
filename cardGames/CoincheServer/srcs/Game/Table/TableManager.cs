@@ -43,12 +43,12 @@ namespace CoincheServer.Game.Table
         /// Play a card.
         /// </summary>
         /// <param name="player"></param>
-        public void AddCard(Player player)
+        public void AddCard(Player player, int idCard)
         {
             Common.IO.OutputManager.Debug.Display("TableManager", "AddBet() : called");
             try
             {
-                DoAddCard(player);
+                DoAddCard(player, idCard);
             }
             catch (Exception ex)
             {

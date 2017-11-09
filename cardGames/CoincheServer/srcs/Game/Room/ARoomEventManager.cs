@@ -30,5 +30,9 @@ namespace CoincheServer.Game.Room
         {
 
         }
+        public void EventCardAdded(Common.GameUtils.Player p)
+        {
+
+        }
     }
 }
