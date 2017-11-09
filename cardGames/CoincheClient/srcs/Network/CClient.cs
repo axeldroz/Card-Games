@@ -73,7 +73,7 @@ namespace CoincheClient.Network
             while (i < cards.Count)
             {
                 c = cards.ElementAt(i);
-                Console.Write("Card n" + i);
+                Console.Write("Card n" + (i + 1));
                 Console.Write(" Suit = " + c.suit);
                 Console.Write(" Number = " + c.number);
                 //Console.Write(" Player = ", c.player.Name);
