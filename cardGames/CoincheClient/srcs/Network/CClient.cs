@@ -107,12 +107,22 @@ namespace CoincheClient.Network
             Console.WriteLine("CClient.PlayCard()");
             Console.WriteLine("CardCount3=" + deck.Count + "");
             Console.WriteLine("Your cards in your hand :");
+            Common.IO.OutputManager.Debug.DisplayVar("DeckRound is NULL", deckRound == null);
+            if (deckRound != null)
+            Common.IO.OutputManager.Debug.DisplayVar("DeckRound.Count", deckRound.Count + "");
             Task<int> task = new Task<int>(new Func<int>(() => RunDisplayList(deck)));
             Task<int> task2 = new Task<int>(new Func<int>(() => RunDisplayListRound(deckRound)));
             Task<int> task3 = new Task<int>(new Func<int>(() => RunCard(deck.Count)));
             task.Start();
             Thread.Sleep(200);
-            task2.Start();
+            if (deckRound != null)
+            {
+                task2.Start();
+            }
+            else
+            {
+                Console.WriteLine("You Start the Hand ...")
+            }
             Thread.Sleep(200);
             task3.Start();
 
@@ -126,9 +136,15 @@ namespace CoincheClient.Network
             while (i < cards.Count)
             {
                 c = cards.ElementAt(i);
-
-                Console.WriteLine(c.player.Name + " -> [" + c.suit + " " + c.number + "]");
-                //Console.Write(" Player = ", c.player.Name);
+                try
+                {
+                    Console.WriteLine(c.player.Name + " -> [" + c.suit + " " + c.number + "]");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exeception when display Deck: " + e.ToString());
+                }
+                    //Console.Write(" Player = ", c.player.Name);
                 //Console.WriteLine(" point = ", c.point);
                 ++i;
             }

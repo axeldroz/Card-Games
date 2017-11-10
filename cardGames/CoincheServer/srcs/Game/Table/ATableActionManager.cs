@@ -40,14 +40,19 @@ namespace CoincheServer.Game.Table
             Common.IO.OutputManager.Debug.Display("ATableActionManager", "DoAddBet() : called");
             bet = newBet;
             EventBetAdded(newBet.player, newBet);
+
+            //Player firstPlayer = team.First().Player.First();
+            //Player firstPlayer = bet.player;
+            //server.AskPlayCard(firstPlayer, RoundDeck);
         }
 
         public void DoAddCard(Player player, int idCard)
         {
             Card c = player.Deck.cards.ElementAt(idCard);
             c.player = player;
-            DeckRound.cards.Add(c);
+            RoundDeck.AddCard(c);
             player.Deck.cards.RemoveAt(idCard);
+            Common.IO.OutputManager.Debug.DisplayVar("RoundDeck.Count", RoundDeck.cards.Count + "");
             EventCardAdded(player);
         }
     }

@@ -56,7 +56,16 @@ namespace CoincheClient.Network
             Packet07Deck pack)
         {
             Console.WriteLine(pack.Descr);
-            client.PlayCard(pack.Deck.cards, pack.Deck2.cards);
+            try
+            {
+                if (pack.Deck2 != null)
+                    Common.IO.OutputManager.Debug.DisplayVar("CClientEvent : pack.Deck2.cards.Count", pack.Deck2.Count + "");
+                client.PlayCard(pack.Deck.cards, pack.Deck2);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Exception e" + e.ToString());
+            }
         }
         protected void WhenShowCards(PacketHeader packetHeader, Connection connection, Packet07Deck pack)
         {

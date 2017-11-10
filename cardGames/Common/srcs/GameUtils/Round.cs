@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,9 +7,12 @@ using System.Text;
 
 namespace Common.GameUtils
 {
+    [ProtoContract]
     public class Round : Deck
     {
+        [ProtoMember(1)]
         public Card Asset { get; set; }
+        [ProtoMember(2)]
         public Bet CurrentBet { get; set; }
 
         /// <summary>

@@ -18,7 +18,6 @@ namespace Common.IO
             public static Tuple<int, string> Heart = new Tuple<int, string>(3, "heart");
             public static Tuple<int, string> Spade = new Tuple<int, string>(4, "spade");
             public static string SuitInfo = "suit (1:diamond; 2:club, 3:heart, 4:spade)";
-              
         }
 
         public static class Server

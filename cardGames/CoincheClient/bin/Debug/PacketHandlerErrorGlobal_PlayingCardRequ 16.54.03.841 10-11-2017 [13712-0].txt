@@ -1,0 +1,8 @@
+Base Exception Type: System.NullReferenceException: La référence d'objet n'est pas définie à une instance d'un objet.
+   à CoincheClient.Network.ANetworkListenerCallback.WhenPlayingCardRequest(PacketHeader packetHeader, Connection connection, Packet07Deck pack) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheClient\srcs\Network\ANetworkListenerCallback.cs:ligne 59
+   à NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Tools\PacketUnwrappers.cs:ligne 97
+   à NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 758
+
+Stack Trace:    à CoincheClient.Network.ANetworkListenerCallback.WhenPlayingCardRequest(PacketHeader packetHeader, Connection connection, Packet07Deck pack) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheClient\srcs\Network\ANetworkListenerCallback.cs:ligne 59
+   à NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Tools\PacketUnwrappers.cs:ligne 97
+   à NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 758

@@ -1,0 +1,58 @@
+Base Exception Type: System.InvalidOperationException: Unexpected sub-type: Common.GameUtils.Round
+   à ProtoBuf.Meta.TypeModel.ThrowUnexpectedSubtype(Type expected, Type actual)
+   à proto_13(Object , ProtoWriter )
+   à ProtoBuf.Serializers.CompiledSerializer.ProtoBuf.Serializers.IProtoSerializer.Write(Object value, ProtoWriter dest)
+   à ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   à ProtoBuf.ProtoWriter.WriteObject(Object value, Int32 key, ProtoWriter writer)
+   à proto_15(Object , ProtoWriter )
+   à ProtoBuf.Serializers.CompiledSerializer.ProtoBuf.Serializers.IProtoSerializer.Write(Object value, ProtoWriter dest)
+   à ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   à ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   à ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   à ProtoBuf.Serializer.NonGeneric.Serialize(Stream dest, Object instance)
+   à NetworkCommsDotNet.DPSBase.ProtobufSerializer.SerialiseDataObjectInt(Stream ouputStream, Object objectToSerialise, Dictionary`2 options)
+   à NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseGeneralObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\DPSBase\DataSerializer.cs:ligne 122
+   à NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseDataObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\DPSBase\DataSerializer.cs:ligne 113
+   à NetworkCommsDotNet.Packet.Constructor[payloadObjectType](String sendingPacketTypeStr, String requestReturnPacketTypeStr, payloadObjectType payloadObject, SendReceiveOptions options, Boolean isNested) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Packet.cs:ligne 203
+   à NetworkCommsDotNet.Packet..ctor(String sendingPacketTypeStr, Object payloadObject, SendReceiveOptions options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Packet.cs:ligne 92
+   à NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend, SendReceiveOptions options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Connection\ConnectionSendClose.cs:ligne 106
+   à NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Connection\ConnectionSendClose.cs:ligne 80
+   à CoincheServer.Network.ACoincheSenderServer.SendPlayingCardRequest(Connection c, Deck _deck, Deck _deckRound) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Network\ACoincheSenderServer.cs:ligne 93
+   à CoincheServer.Network.CServer.AskPlayCard(Player player, Deck deckRound) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Network\CServer.cs:ligne 42
+   à CoincheServer.Game.Table.ATableEventManager.EventBetAdded(Player player, Bet _bet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Table\ATableEventManager.cs:ligne 63
+   à CoincheServer.Game.Table.ATableActionManager.DoAddBet(Bet newBet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Table\ATableActionManager.cs:ligne 42
+   à CoincheServer.Game.Table.TableManager.AddBet(Bet bet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Table\TableManager.cs:ligne 39
+   à CoincheServer.Game.Room.ARoomActionManager.DoAddBet(Bet bet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Room\ARoomActionManager.cs:ligne 56
+   à CoincheServer.Game.Room.RoomManager.AddBet(Connection c, Bet bet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Room\RoomManager.cs:ligne 41
+   à CoincheServer.Network.ANetworkListenerCallback.WhenBetAnswer(PacketHeader packetHeader, Connection connection, Packet05Bet pack) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Network\ANetworkListenerCallback.cs:ligne 82
+   à NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Tools\PacketUnwrappers.cs:ligne 97
+   à NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 758
+
+Stack Trace:    à ProtoBuf.Meta.TypeModel.ThrowUnexpectedSubtype(Type expected, Type actual)
+   à proto_13(Object , ProtoWriter )
+   à ProtoBuf.Serializers.CompiledSerializer.ProtoBuf.Serializers.IProtoSerializer.Write(Object value, ProtoWriter dest)
+   à ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   à ProtoBuf.ProtoWriter.WriteObject(Object value, Int32 key, ProtoWriter writer)
+   à proto_15(Object , ProtoWriter )
+   à ProtoBuf.Serializers.CompiledSerializer.ProtoBuf.Serializers.IProtoSerializer.Write(Object value, ProtoWriter dest)
+   à ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   à ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   à ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   à ProtoBuf.Serializer.NonGeneric.Serialize(Stream dest, Object instance)
+   à NetworkCommsDotNet.DPSBase.ProtobufSerializer.SerialiseDataObjectInt(Stream ouputStream, Object objectToSerialise, Dictionary`2 options)
+   à NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseGeneralObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\DPSBase\DataSerializer.cs:ligne 122
+   à NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseDataObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\DPSBase\DataSerializer.cs:ligne 113
+   à NetworkCommsDotNet.Packet.Constructor[payloadObjectType](String sendingPacketTypeStr, String requestReturnPacketTypeStr, payloadObjectType payloadObject, SendReceiveOptions options, Boolean isNested) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Packet.cs:ligne 203
+   à NetworkCommsDotNet.Packet..ctor(String sendingPacketTypeStr, Object payloadObject, SendReceiveOptions options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Packet.cs:ligne 92
+   à NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend, SendReceiveOptions options) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Connection\ConnectionSendClose.cs:ligne 106
+   à NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Connection\ConnectionSendClose.cs:ligne 80
+   à CoincheServer.Network.ACoincheSenderServer.SendPlayingCardRequest(Connection c, Deck _deck, Deck _deckRound) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Network\ACoincheSenderServer.cs:ligne 93
+   à CoincheServer.Network.CServer.AskPlayCard(Player player, Deck deckRound) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Network\CServer.cs:ligne 42
+   à CoincheServer.Game.Table.ATableEventManager.EventBetAdded(Player player, Bet _bet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Table\ATableEventManager.cs:ligne 63
+   à CoincheServer.Game.Table.ATableActionManager.DoAddBet(Bet newBet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Table\ATableActionManager.cs:ligne 42
+   à CoincheServer.Game.Table.TableManager.AddBet(Bet bet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Table\TableManager.cs:ligne 39
+   à CoincheServer.Game.Room.ARoomActionManager.DoAddBet(Bet bet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Room\ARoomActionManager.cs:ligne 56
+   à CoincheServer.Game.Room.RoomManager.AddBet(Connection c, Bet bet) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Game\Room\RoomManager.cs:ligne 41
+   à CoincheServer.Network.ANetworkListenerCallback.WhenBetAnswer(PacketHeader packetHeader, Connection connection, Packet05Bet pack) dans C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheServer\srcs\Network\ANetworkListenerCallback.cs:ligne 82
+   à NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\Tools\PacketUnwrappers.cs:ligne 97
+   à NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride) dans C:\Users\Simbrams\Desktop\NetworkComms.Net-master\NetworkCommsDotNet\NetworkComms.cs:ligne 758

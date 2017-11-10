@@ -82,22 +82,31 @@ namespace CoincheServer.Network
             };
             c.SendObject<Packet05Bet>("BetAccepted", pack);
         }
-        public void SendPlayingCardRequest(Connection c, Common.GameUtils.Deck _deck, Common.GameUtils.Deck _deckRound)
+        public void SendPlayingCardRequest(Connection c, Common.GameUtils.Deck _deck, Common.GameUtils.Round _deckRound)
         {
+            List<Common.GameUtils.Card> ca = new List<Common.GameUtils.Card>(_deckRound.cards);
+            Common.IO.OutputManager.Debug.DisplayVar("CServer : deckRound.Count", ca.Count + "");
             Packet07Deck pack = new Packet07Deck()
             {
-                Descr = Common.IO.Messages.Server.BetRequest,
+                Descr = "You have to Play card",
                 Deck = _deck,
-                Deck2 = _deckRound
+                Deck2 = ca
             };
-            c.SendObject<Packet07Deck>("PlayingCardRequest", pack);
+            try
+            {
+                c.SendObject<Packet07Deck>("PlayingCardRequest", pack);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Exception : " + e.ToString());
+            }
         }
         public void SendCardsAnswer(Connection c, Common.GameUtils.Deck _deck)
         {
             Packet07Deck pack = new Packet07Deck()
             {
                 Descr = "Here is your Cards :",
-                Deck = _deck
+                Deck = (Common.GameUtils.Deck)_deck
             };
             c.SendObject<Packet07Deck>("ShowCards", pack);
         }

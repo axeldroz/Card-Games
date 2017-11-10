@@ -12,7 +12,8 @@ namespace CoincheServer.Game.Table
     {
         protected List<Player> player;
         protected Deck deck;
-        public Deck DeckRound { get; set; } //deck où l'on pose nos carte pour jouer
+        //public Deck DeckRound { get; set; } //deck où l'on pose nos carte pour jouer
+        public Round RoundDeck { get; set; }
         protected List<Team> team;
         protected Bet bet;
         protected Deck handStack;
@@ -28,7 +29,7 @@ namespace CoincheServer.Game.Table
             team.Add(new Team {Name = "Red"});
             team.Add(new Team {Name = "Blue"});
             handStack = new Deck();
-            DeckRound = new Deck();
+            RoundDeck = new Round();
         }
 
         /// <summary>

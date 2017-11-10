@@ -101,7 +101,7 @@ namespace Common.NetworkUtils
             [ProtoMember(2)]
             public Deck Deck { get; set; } // Joueur
             [ProtoMember(3)]
-            public Deck Deck2 { get; set; } // GameDeck
+            public List<Common.GameUtils.Card> Deck2 { get; set; } // GameDeck
         }
     }
 }
