@@ -68,7 +68,7 @@ namespace Common.GameUtils
         {
             int ScoreTeamRed = 0;
             int ScoreTeamBlue = 0;
-            Player SaveBest = new Player();
+            Player SaveBest = null;
             int lastCard = 0;
 
             try
