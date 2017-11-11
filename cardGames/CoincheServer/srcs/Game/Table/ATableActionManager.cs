@@ -22,6 +22,7 @@ namespace CoincheServer.Game.Table
             {
                 Console.WriteLine("TableActionManager.DoAddPLayer()");
                 tmp.Player.Add(player);
+                //player.Team = tmp;
                 Console.WriteLine("Player " + player.Name + " has join the team " + tmp.Name + "!");
                 if (tmp.Player.Count == 2)
                 {

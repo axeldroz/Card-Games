@@ -20,5 +20,9 @@ namespace Common.GameUtils
         public int point; // point que vaut la carte
         [ProtoMember(5)]
         public int pointA; // point que vaut la carte
+        [ProtoMember(6)]
+        public int power; // valeur de la carte
+        [ProtoMember(7)]
+        public int powerA; // valeur de la carte avec atout
     }
 }

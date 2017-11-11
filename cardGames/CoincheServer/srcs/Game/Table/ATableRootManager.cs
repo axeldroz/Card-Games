@@ -31,7 +31,7 @@ namespace CoincheServer.Game.Table
             team.Add(new Team {Name = "Red"});
             team.Add(new Team {Name = "Blue"});
             handStack = new Deck();
-            RoundDeck = new Round();
+            RoundDeck = new Round(team);
             bet = new Bet
             {
                 points = 0,

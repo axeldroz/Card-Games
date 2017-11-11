@@ -11,15 +11,18 @@ namespace Common.GameUtils
     public class Round : Deck
     {
         [ProtoMember(1)]
-        public Card Asset { get; set; }
+        public string Asset { get; set; }
         [ProtoMember(2)]
         public Bet CurrentBet { get; set; }
+        [ProtoMember(3)]
+        public List<Team> Teams { get; set; }
 
         /// <summary>
         /// Initialize new round, it's highly recommanded to set Asset and CurrentBet Values;
         /// </summary>
-        public Round() : base()
+        public Round(List<Team> t) : base()
         {
+            Teams = t;
         }
 
         /// <summary>
@@ -61,10 +64,72 @@ namespace Common.GameUtils
             }
         }
 
+        public Player WhoWonRound()
+        {
+            Card bestCard = new Card();
+            int lastPower = 0;
+
+            if (cards == null || cards.Count < 4)
+                return (null);
+            foreach (Card ca in cards)
+            {
+                if (ca.suit == Asset)
+                {
+                    if (ca.powerA > lastPower)
+                    {
+                        lastPower = ca.powerA;
+                        bestCard = ca;
+                    }
+                }
+                else
+                {
+                     if (ca.power > lastPower)
+                     {
+                          lastPower = ca.power;
+                          bestCard = ca;
+                     }
+                }
+            }
+            return (bestCard.player);
+        }
+
+        public Player AddPointToTeams()
+        {
+            Player winner = WhoWonRound();
+            int totalPoints = 0;
+
+            foreach(Card ca in cards)
+            {
+                if (ca.suit == Asset)
+                    totalPoints += ca.pointA;
+                else
+                    totalPoints += ca.point;
+            }
+            foreach (Player p in Teams.First().Player)
+            {
+                if (winner == p)
+                {
+                    Teams.First().Score += totalPoints;
+                    return (winner);
+                }
+                    
+            }
+            foreach (Player p in Teams.Last().Player)
+            {
+                if (winner == p)
+                {
+                    Teams.Last().Score += totalPoints;
+                    return (winner);
+                }
+
+            }
+            return (winner);
+        }
+
         /// <summary>
         /// Check wich team Won the plit and distribute point to players and Teams.
         /// </summary>
-        public Player WhoWonRound()
+        /*public Player WhoWonRound()
         {
             int ScoreTeamRed = 0;
             int ScoreTeamBlue = 0;
@@ -115,14 +180,14 @@ namespace Common.GameUtils
             {
                 throw ex;
             }
-        }
+        }*/
 
         /// <summary>
         /// Check who won the Bet and give points to the winner and his team.
         /// </summary>
-        public Player WhoWonBet()
+       /* public Player WhoWonBet()
         {
-            Player save = new Player();
+            Player save = null;
             try
             {
                 foreach (var elem in cards)
@@ -144,7 +209,7 @@ namespace Common.GameUtils
                 throw ex;
             }
 
-        }
+        }*/
 
 
     }
