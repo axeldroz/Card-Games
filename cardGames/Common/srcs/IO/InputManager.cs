@@ -43,29 +43,59 @@ namespace Common.IO
                 }
                 return (str);
             }
+
+            public struct Between
+            {
+                public int min;
+                public int max;
+
+                public Between(int a, int b)
+                {
+                    min = a;
+                    max = b;
+                }
+            };
+
+            public static int GetNumber(string msg1, string msg2, 
+                Between s, bool again = false)
+            {
+                int a;
+
+                a = -1;
+                try
+                {
+                    if (msg1 != null)
+                        Console.Write(msg1);
+                    if (msg2 != null && again)
+                        Console.WriteLine(msg2);
+                    a = Int32.Parse(Console.ReadLine());
+                    if (!(a >= s.min && a <= s.max))
+                        a = GetNumber(msg1, msg2, s, true);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("Problem format ...");
+                    a = GetNumber(msg1, msg2, s, true);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception e" + e.ToString());
+                }
+                return (a);
+            }
             public static Common.GameUtils.Bet CreateBet()
             {
                 Common.GameUtils.Bet bet = new GameUtils.Bet();
                 int a;
+                Between bPoints = new Between(0, 180);
 
                 Common.IO.OutputManager.Standard.Client.AskBet();
-                Console.Write(Common.IO.Messages.Suit.SuitInfo + "? ");
-                a = Int32.Parse(Console.ReadLine());
-                while (a < 1 || a > 4)
-                {
-                    Console.WriteLine("Please Enter a number between 1-4");
-                    Console.Write(Common.IO.Messages.Suit.SuitInfo + "? ");
-                    a = Int32.Parse(Console.ReadLine());
-                }
-                bet.suit = GetSuit(a);
-                Console.WriteLine("Enter number of points you want bet (0-180)");
-                a = Int32.Parse(Console.ReadLine());
-                while (a < 0 || a > 180)
-                {
-                    Console.WriteLine("Please Enter a number between 0-80");
-                    a = Int32.Parse(Console.ReadLine());
-                }
-                bet.points = a;
+                //Console.Write(Common.IO.Messages.Suit.SuitInfo + "? ");
+                bet.suit = GetSuit(GetNumber(Common.IO.Messages.Suit.SuitInfo + "? ",
+                    "Please enter a number between 1-4", new Between(1, 4)));
+                bet.points = GetNumber("Enter number of points you want bet ("
+                    + bPoints.min + "-" + bPoints.max + ") ?", "", 
+                    bPoints);
                 bet.player = null;
                 bet.team = null;
                 bet.coinched = false;

@@ -88,7 +88,7 @@ namespace CoincheServer.Network
             Common.IO.OutputManager.Debug.DisplayVar("CServer : deckRound.Count", ca.Count + "");
             Packet07Deck pack = new Packet07Deck()
             {
-                Descr = "You have to Play card",
+                Descr = "You have to Play card", 
                 Deck = _deck,
                 Deck2 = ca
             };

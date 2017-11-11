@@ -121,7 +121,7 @@ namespace CoincheClient.Network
             }
             else
             {
-                Console.WriteLine("You Start the Hand ...")
+                Console.WriteLine("You Start the Hand ...");
             }
             Thread.Sleep(200);
             task3.Start();
@@ -154,14 +154,16 @@ namespace CoincheClient.Network
         private int RunCard(int nb)
         {
             int a = 0;
-            Console.Write("Number of the card you want to play ? ");
-            a = Int32.Parse(Console.ReadLine());
-            while (a < 1 || a > nb)
+            Common.IO.InputManager.Client.Between s = new Common.IO.InputManager.Client.Between
             {
-                Console.WriteLine("You have to choose a number between 1-"
-                    + nb);
-                a = Int32.Parse(Console.ReadLine());
-            }
+                min = 1,
+                max = nb
+            };
+            //Console.Write("Number of the card you want to play ? ");
+            a = Common.IO.InputManager.Client.GetNumber
+                ("Number of the card you want to play ? ",
+                "You have to choose a number between 1-" + nb,
+                s);
             SendPlayingCardAnswer(a - 1);
             return (0);
         }
