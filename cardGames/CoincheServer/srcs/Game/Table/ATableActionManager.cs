@@ -38,8 +38,12 @@ namespace CoincheServer.Game.Table
         public void DoAddBet(Bet newBet)
         {
             Common.IO.OutputManager.Debug.Display("ATableActionManager", "DoAddBet() : called");
-            bet = newBet;
-            EventBetAdded(newBet.player, newBet);
+            if (newBet.points > bet.points && newBet.points >= 80)
+            {
+                bet = newBet;
+                betHasraised = true;
+            }
+            EventBetAdded(newBet.player, bet);
 
             //Player firstPlayer = team.First().Player.First();
             //Player firstPlayer = bet.player;

@@ -51,7 +51,7 @@ namespace CoincheServer.Game.Table
         public void EventBetAdded(Player player, Bet _bet)
         {
             Common.IO.OutputManager.Debug.Display("ARoomEventManager", "EventAddBet() : called");
-            Player nextPlayer = NextPlayer(player);
+            Player nextPlayer = NextPlayerBet(player);
             Common.IO.OutputManager.Debug.DisplayVar("nextPlayer is null", nextPlayer == null);
             //server.SendCards(nextPlayer); // always before bet
             if (nextPlayer != null)

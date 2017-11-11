@@ -19,6 +19,8 @@ namespace CoincheServer.Game.Table
         protected Deck handStack;
         protected bool isReady;
         protected CServer server;
+        protected int tourBet;
+        protected bool betHasraised;
 
         public ATableRootManager(CServer _server)
         {
@@ -30,6 +32,13 @@ namespace CoincheServer.Game.Table
             team.Add(new Team {Name = "Blue"});
             handStack = new Deck();
             RoundDeck = new Round();
+            bet = new Bet
+            {
+                points = 0,
+                suit = "diamond"
+            };
+            tourBet = 0;
+            betHasraised = false;
         }
 
         /// <summary>
@@ -51,6 +60,23 @@ namespace CoincheServer.Game.Table
                 return (Team.First().Player.Last());
             if (player == Team.First().Player.Last())
                 return (Team.Last().Player.Last());
+            return (null);
+        }
+
+        public Player NextPlayerBet(Player player)
+        {
+            if (tourBet < 3 || !betHasraised || bet.points < 80)
+            {
+                ++tourBet;
+                if (player == Team.First().Player.First())
+                    return (Team.Last().Player.First());
+                if (player == Team.Last().Player.First())
+                    return (Team.First().Player.Last());
+                if (player == Team.First().Player.Last())
+                    return (Team.Last().Player.Last());
+                if (player == Team.Last().Player.Last())
+                    return (Team.First().Player.First());
+            }
             return (null);
         }
 
