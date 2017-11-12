@@ -78,6 +78,8 @@ namespace CoincheClient.Network
         /* to finish */
         public void PlayCard(List<Card> deck, List<Card> deckRound)
         {
+            Console.WriteLine("CClient.PlayCard()");
+            Console.WriteLine("CardCount3=" + deck.Count + "");
             Console.WriteLine("Your cards in your hand :");
             Task<int> task = new Task<int>(new Func<int>(() => RunDisplayList(deck)));
             Task<int> task2 = new Task<int>(new Func<int>(() => RunDisplayListRound(deckRound)));
