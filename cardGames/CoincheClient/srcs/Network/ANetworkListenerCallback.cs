@@ -28,6 +28,11 @@ namespace CoincheClient.Network
             Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + packet.Message + "'.");
         }
 
+        protected void WhenPing(PacketHeader header, Connection connection, Packet00Message packet)
+        {
+            client.Login();
+        }
+
         protected void WhenLoginAnswer(PacketHeader packetHeader, Connection connection, Packet02LoginAnswer incomingObject)
         {
             throw new NotImplementedException();
