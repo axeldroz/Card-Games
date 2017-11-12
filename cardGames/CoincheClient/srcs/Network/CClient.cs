@@ -36,6 +36,7 @@ namespace CoincheClient.Network
 
         public void Bet(Bet lastbet, List<Card> _cards)
         {
+            Console.WriteLine(lastbet.player.Name + " has bet " + lastbet.points + " on " + lastbet.suit);
             Console.WriteLine("Your cards in your hand :");
             Task<int> task = new Task<int>(new Func<int>( () => RunDisplayList(_cards)));
 
@@ -110,7 +111,7 @@ namespace CoincheClient.Network
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Exception when display Deck: " + e.ToString());
+                    Console.WriteLine("Exeception when display Deck: " + e.ToString());
                 }
                 ++i;
             }
