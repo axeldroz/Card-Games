@@ -1,2 +1,7 @@
 .suo
 .exe
+/cardGames/CoincheClient/bin/Debug/CoincheClient.exe
+/cardGames/CoincheClient/bin/Debug/Common.exe
+/cardGames/CoincheClient/bin/Debug/ProtobufSerializer.dll
+/cardGames/CoincheClient/bin/Debug/protobuf-net.dll
+/cardGames/CoincheClient/bin/Debug/NetworkCommsDotNet.dll

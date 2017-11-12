@@ -60,7 +60,7 @@ namespace CoincheServer.Game.Table
                 return (Team.First().Player.Last());
             if (player == Team.First().Player.Last())
                 return (Team.Last().Player.Last());
-            return (null);
+            return (Team.First().Player.First());
         }
 
         public Player NextPlayerBet(Player player)

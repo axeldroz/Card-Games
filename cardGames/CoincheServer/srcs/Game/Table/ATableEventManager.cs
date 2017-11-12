@@ -78,7 +78,7 @@ namespace CoincheServer.Game.Table
                 //Player firstPlayer = team.First().Player.First();
                 Player firstPlayer = RoundDeck.AddPointToTeams();
                 RoundDeck.ClearTable();
-                if (firstPlayer.Deck.cards.Count > 0)
+                if (firstPlayer != null && firstPlayer.Deck.cards.Count > 0)
                     server.AskPlayCard(firstPlayer, RoundDeck);
                 else
                 {
