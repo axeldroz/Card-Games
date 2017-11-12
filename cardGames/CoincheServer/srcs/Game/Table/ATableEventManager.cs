@@ -53,14 +53,12 @@ namespace CoincheServer.Game.Table
         public void EventBetAdded(Player player, Bet _bet)
         {
             Player nextPlayer = NextPlayerBet(player);
-            //server.SendCards(nextPlayer); // always before bet
             if (nextPlayer != null)
                 server.AskBet(nextPlayer, _bet);
             else
             {
                 Player firstPlayer = team.First().Player.First();
                 RoundDeck.Asset = bet.suit;
-                //Player firstPlayer = bet.player;
                 server.AskPlayCard(firstPlayer, RoundDeck);
             }
         }
