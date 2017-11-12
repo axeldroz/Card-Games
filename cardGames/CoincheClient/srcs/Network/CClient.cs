@@ -103,7 +103,6 @@ namespace CoincheClient.Network
         /* to finish */
         public void PlayCard(List<Card> deck, List<Card> deckRound)
         {
-            Common.GameUtils.Card card;
             Console.WriteLine("CClient.PlayCard()");
             Console.WriteLine("CardCount3=" + deck.Count + "");
             Console.WriteLine("Your cards in your hand :");

@@ -86,7 +86,6 @@ namespace Common.IO
             public static Common.GameUtils.Bet CreateBet()
             {
                 Common.GameUtils.Bet bet = new GameUtils.Bet();
-                int a;
                 Between bPoints = new Between(0, 180);
 
                 Common.IO.OutputManager.Standard.Client.AskBet();

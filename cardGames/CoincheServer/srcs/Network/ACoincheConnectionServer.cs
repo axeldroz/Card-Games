@@ -12,14 +12,14 @@ namespace CoincheServer.Network
 {
     public abstract class ACoincheConnectionServer
     {
-        protected ServerInfo serverInfo;
-        private NetworkListener nl;
+        protected ServerInfo ServerInfo;
+        private NetworkListener Nl;
         protected Game.Room.RoomManager room;
-        private CServer myserverInstance;
+
         public ACoincheConnectionServer(string _ip, int _port)
         {
-            serverInfo.Ip = _ip;
-            serverInfo.Port = _port;
+            ServerInfo.Ip = _ip;
+            ServerInfo.Port = _port;
             
         }
 
@@ -32,9 +32,9 @@ namespace CoincheServer.Network
         public void InitConnection(CServer _son)
         {
             
-            nl = new NetworkListener(_son);
+            Nl = new NetworkListener(_son);
             room = new Game.Room.RoomManager(_son);
-            nl.Init();
+            Nl.Init();
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace CoincheServer.Network
         public void Start()
         {
             Connection.StartListening
-                (ConnectionType.TCP, new System.Net.IPEndPoint(System.Net.IPAddress.Any, serverInfo.Port));
+                (ConnectionType.TCP, new System.Net.IPEndPoint(System.Net.IPAddress.Any, ServerInfo.Port));
         }
         /// <summary>
         /// Stop the server
@@ -60,22 +60,22 @@ namespace CoincheServer.Network
         {
             get
             {
-                return serverInfo.Ip;
+                return ServerInfo.Ip;
             }
             set
             {
-                serverInfo.Ip = value;
+                ServerInfo.Ip = value;
             }
         }
         public int Port
         {
             get
             {
-                return serverInfo.Port;
+                return ServerInfo.Port;
             }
             set
             {
-                serverInfo.Port = value;
+                ServerInfo.Port = value;
             }
         }
         public Game.Room.RoomManager Room
