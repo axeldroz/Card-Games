@@ -20,7 +20,6 @@ namespace CoincheServer.Game.Table
             Team tmp = FindTeamAvailable();
             if (tmp != null) // Check if the team is not full.
             {
-                Console.WriteLine("TableActionManager.DoAddPLayer()");
                 tmp.Player.Add(player);
                 //player.Team = tmp;
                 Console.WriteLine("Player " + player.Name + " has join the team " + tmp.Name + "!");
@@ -44,10 +43,6 @@ namespace CoincheServer.Game.Table
                 betHasraised = true;
             }
             EventBetAdded(newBet.player, bet);
-
-            //Player firstPlayer = team.First().Player.First();
-            //Player firstPlayer = bet.player;
-            //server.AskPlayCard(firstPlayer, RoundDeck);
         }
 
         public void DoAddCard(Player player, int idCard)

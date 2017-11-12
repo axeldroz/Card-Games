@@ -52,11 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="srcs\EntryPointServer.cs" />
     <Compile Include="srcs\Game\Room\ARoomActionManager.cs" />
     <Compile Include="srcs\Game\Room\ARoomEventManager.cs" />
     <Compile Include="srcs\Game\Room\ARoomRootManager.cs" />
-    <Compile Include="srcs\Game\GameManagerServer.cs" />
     <Compile Include="srcs\Game\Room\RoomManager.cs" />
     <Compile Include="srcs\Game\Table\ATableActionManager.cs" />
     <Compile Include="srcs\Game\Table\ATableEventManager.cs" />

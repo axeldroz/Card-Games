@@ -70,7 +70,6 @@ namespace CoincheServer.Game.Table
                 server.AskPlayCard(nextPlayer, RoundDeck);
             else
             {
-                //Player firstPlayer = team.First().Player.First();
                 tourPlayingCard = 0;
                 Player firstPlayer = RoundDeck.AddPointToTeams();
                 RoundDeck.ClearTable();

@@ -14,16 +14,15 @@ namespace CoincheServer.Game.Room
         {
         }
 
-        /*
-         * Following Handling method for server
-         */
+        /// <summary>
+        /// Add a new player.
+        /// </summary>
+        /// <param name="player"></param>
         public void AddPlayer(Player player)
         {
             /* petit trick pour appelé ovveride dans une classe parente */
             player.Id = 0;
             player.Score = 0;
-            //player.Teamscore = 0;
-            Console.WriteLine("RoomManager.AddPlayer");
             if (DoAddPlayer(player))
                 EventPlayerAdded();
         }

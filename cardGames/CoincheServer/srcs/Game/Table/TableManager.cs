@@ -43,6 +43,7 @@ namespace CoincheServer.Game.Table
         /// Play a card.
         /// </summary>
         /// <param name="player"></param>
+        /// <param name="idCard"></param>
         public void AddCard(Player player, int idCard)
         {
             try

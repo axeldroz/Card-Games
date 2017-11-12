@@ -19,7 +19,6 @@ namespace CoincheServer.Network
          */ 
         public void AskBet(Common.GameUtils.Player player, Common.GameUtils.Bet bet)
         {
-            Common.IO.OutputManager.Debug.Display("CServer", "AskBet() : called");
             Console.WriteLine("CardCount=" + player.Deck.cards.Count + "");
             if (bet.points == 0)
             {
@@ -40,8 +39,6 @@ namespace CoincheServer.Network
         public void AskPlayCard(Common.GameUtils.Player player, Round deckRound)
         {
             SendPlayingCardRequest(player.Connection, player.Deck, deckRound);
-            Common.IO.OutputManager.Debug.DisplayVar("CServer : deckRound.Count", deckRound.cards.Count + "");
-
         }
 
         public void InformTeam(Player player, Team team)

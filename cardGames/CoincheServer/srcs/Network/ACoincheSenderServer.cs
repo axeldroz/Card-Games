@@ -85,7 +85,6 @@ namespace CoincheServer.Network
         public void SendPlayingCardRequest(Connection c, Common.GameUtils.Deck _deck, Common.GameUtils.Round _deckRound)
         {
             List<Common.GameUtils.Card> ca = new List<Common.GameUtils.Card>(_deckRound.cards);
-            Common.IO.OutputManager.Debug.DisplayVar("CServer : deckRound.Count", ca.Count + "");
             Packet07Deck pack = new Packet07Deck()
             {
                 Descr = "You have to Play card", 

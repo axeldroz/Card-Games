@@ -12,7 +12,6 @@ namespace CoincheServer.Game.Table
     {
         protected List<Player> player;
         protected Deck deck;
-        //public Deck DeckRound { get; set; } //deck où l'on pose nos carte pour jouer
         public Round RoundDeck { get; set; }
         protected List<Team> team;
         protected Bet bet;
