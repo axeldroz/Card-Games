@@ -118,6 +118,14 @@ namespace CoincheServer.Game.Table
             return (null);
         }
 
+        public void DisplayScores()
+        {
+            foreach(Team t in Team)
+            {
+                Console.WriteLine("The score of the " + t.Name + " is : " + t.Score);
+            }
+        }
+
         public List<Player> Player
         {
             get

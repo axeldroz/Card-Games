@@ -85,6 +85,7 @@ namespace CoincheServer.Game.Table
                 else
                 {
                     // On recommence les paris
+                    DisplayScores();
                     bet = new Bet();
                     Deck.ReGenerate();
                     Deck.Distrib(Team, 2);
