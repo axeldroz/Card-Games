@@ -15,10 +15,11 @@ namespace CoincheServer.Game.Table
 
         }
 
-        public void EventPlayerAdded(Player player)
+        public void EventPlayerAdded(Player player, Team team)
         {
             try
             {
+                server.InformTeam(player, team);
                 if (FindTeamAvailable() == null)
                 {
                     EventGameIsReady();

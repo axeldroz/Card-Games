@@ -33,6 +33,8 @@ namespace CoincheClient.Network
                 <Packet07Deck>("PlayingCardRequest", this.WhenPlayingCardRequest);
             NetworkComms.AppendGlobalIncomingPacketHandler
                 <Packet07Deck>("ShowCards", this.WhenShowCards);
+            NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet09Team>("ShowTeam", this.WhenShowTeam);
         }
 
     }

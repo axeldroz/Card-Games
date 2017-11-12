@@ -73,5 +73,19 @@ namespace CoincheClient.Network
             Console.WriteLine(pack.Descr);
             Common.IO.OutputManager.Standard.Display.ListCard(pack.Deck.cards);
         }
+
+        protected void WhenShowTeam(PacketHeader packetHeader, Connection connection, Packet09Team pack)
+        {
+            Console.WriteLine(pack.Descr);
+            if (pack.Team.Name.Equals("Blue"))
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+
+            }
+        }
     }
 }

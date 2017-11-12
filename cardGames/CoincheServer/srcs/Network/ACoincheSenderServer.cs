@@ -110,5 +110,15 @@ namespace CoincheServer.Network
             };
             c.SendObject<Packet07Deck>("ShowCards", pack);
         }
+
+        public void SendTeamInformation(Connection c, Common.GameUtils.Team team)
+        {
+            Packet09Team pack = new Packet09Team()
+            {
+                Descr = "You are in the " + team.Name + " team",
+                Team = team
+            };
+           c.SendObject("ShowTeam", pack);
+        }
     }
 }

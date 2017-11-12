@@ -44,5 +44,10 @@ namespace CoincheServer.Network
 
         }
 
+        public void InformTeam(Player player, Team team)
+        {
+            SendTeamInformation(player.Connection, team);
+        }
+
     }
 }

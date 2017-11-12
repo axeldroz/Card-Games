@@ -103,5 +103,13 @@ namespace Common.NetworkUtils
             [ProtoMember(3)]
             public List<Common.GameUtils.Card> Deck2 { get; set; } // GameDeck
         }
+        [ProtoContract]
+        public class Packet09Team
+        {
+            [ProtoMember(1)]
+            public string Descr { get; set; }
+            [ProtoMember(2)]
+            public Team Team { get; set; }
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace CoincheServer.Game.Table
                 {
                     tmp.Full = true; // the team is full.
                 }
-                EventPlayerAdded(player);
+                EventPlayerAdded(player, tmp);
             }
             else
             {
