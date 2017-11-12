@@ -45,7 +45,6 @@ namespace CoincheServer.Game.Table
         /// <param name="player"></param>
         public void AddCard(Player player, int idCard)
         {
-            Common.IO.OutputManager.Debug.Display("TableManager", "AddBet() : called");
             try
             {
                 DoAddCard(player, idCard);

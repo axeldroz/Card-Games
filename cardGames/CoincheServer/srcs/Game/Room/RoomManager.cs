@@ -34,9 +34,7 @@ namespace CoincheServer.Game.Room
         /// <param name="bet"></param>
         public void AddBet(Connection c, Bet bet)
         {
-            Common.IO.OutputManager.Debug.Display("RoomManager", "AddBet() : called");
             Player p = FindPlayer(c);
-            Common.IO.OutputManager.Debug.DisplayVar("p.TableID", "" + p.TableId);
             bet.player = p;
             if (DoAddBet(bet))
                 EventBetAdded(bet);
@@ -44,9 +42,7 @@ namespace CoincheServer.Game.Room
 
         public void AddCard(Connection c, int cardId)
         {
-            Common.IO.OutputManager.Debug.Display("RoomManager", "AddCard() : called");
             Player p = FindPlayer(c);
-            //Common.IO.OutputManager.Debug.DisplayVar("p.TableID", "" + p.TableId);
             if (DoAddCard(p, cardId)) { }
                 EventCardAdded(p);
         }

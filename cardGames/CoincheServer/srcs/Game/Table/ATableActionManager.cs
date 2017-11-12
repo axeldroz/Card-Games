@@ -38,7 +38,6 @@ namespace CoincheServer.Game.Table
 
         public void DoAddBet(Bet newBet)
         {
-            Common.IO.OutputManager.Debug.Display("ATableActionManager", "DoAddBet() : called");
             if (newBet.points > bet.points && newBet.points >= 80)
             {
                 bet = newBet;
@@ -57,7 +56,6 @@ namespace CoincheServer.Game.Table
             c.player = player;
             RoundDeck.AddCard(c);
             player.Deck.cards.RemoveAt(idCard);
-            Common.IO.OutputManager.Debug.DisplayVar("RoundDeck.Count", RoundDeck.cards.Count + "");
             EventCardAdded(player);
         }
     }
