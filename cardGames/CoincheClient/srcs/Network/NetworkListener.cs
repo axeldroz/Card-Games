@@ -20,6 +20,8 @@ namespace CoincheClient.Network
             NetworkComms.AppendGlobalIncomingPacketHandler
                 <Packet00Message>("Message", this.WhenMessage);
             NetworkComms.AppendGlobalIncomingPacketHandler
+                <Packet00Message>("Ping", this.WhenPing);
+            NetworkComms.AppendGlobalIncomingPacketHandler
                 <Packet02LoginAnswer>("LoginAnswer", this.WhenLoginAnswer);
             NetworkComms.AppendGlobalIncomingPacketHandler
                 <Packet04WaitGameAnswer>("WaitGameAnswer", this.WhenWaitGameAnswer);
