@@ -34,9 +34,9 @@ namespace CoincheClient.Network
             {
                 NetworkComms.SendObject<Packet00Message>("Ping", serverInfo.ip, serverInfo.port, ping);
             }
-            catch(Exception e)
+            catch(CommsException e)
             {
-                Console.WriteLine(Common.IO.Messages.Error + e.ToString());
+                throw e;
             }
             Console.WriteLine("Ping sended");
         }

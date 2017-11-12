@@ -50,13 +50,40 @@ namespace CoincheClient
             }
             NetworkComms.Shutdown();
         }*/
+
+        private static CClient GoConnect()
+        {
+            int port = 0;
+            string ip;
+            CClient client = null;
+
+            Console.Write("Please enter server IP:");
+            ip = Console.ReadLine();
+            port = Common.IO.InputManager.Client.GetNumber("Please enter server port: ", "Please enter a valid port",
+                new Common.IO.InputManager.Client.Between(4040, 50000));
+            try
+            {
+               client = new CClient(ip, port);
+                
+            }
+            catch (ConnectionSetupException ex)
+            {
+                Console.WriteLine("Can't reach the following server: " + ip + ":" + port);
+                GoConnect();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception : " + ex.ToString());
+            }
+            return (client);
+        }
+
         static void Main(string[] args)
         {
-            CClient client = new CClient("127.0.0.1", 4242);
-            Common.IO.InputManager.Standard.WaitKey("log");
+            CClient client = GoConnect();
             client.Login();
             //Common.IO.InputManager.Standard.WaitQuit();
             while (true) ;
+            }
         }
     }
-}
