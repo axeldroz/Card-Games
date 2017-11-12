@@ -36,8 +36,6 @@ namespace CoincheClient.Network
 
         public void Bet(Bet lastbet, List<Card> _cards)
         {
-            Console.WriteLine("CClient.Bet()");
-            Console.WriteLine("CardCount3=" + _cards.Count + "");
             Console.WriteLine("Your cards in your hand :");
             Task<int> task = new Task<int>(new Func<int>( () => RunDisplayList(_cards)));
 
@@ -64,7 +62,6 @@ namespace CoincheClient.Network
         private int RunDisplayList(List<Card> cards)
         {
             int i = 0;
-            Console.WriteLine("CardCount4=" + cards.Count + "");
             Card c;
             while (i < cards.Count)
             {
@@ -80,10 +77,7 @@ namespace CoincheClient.Network
         /* to finish */
         public void PlayCard(List<Card> deck, List<Card> deckRound)
         {
-            Console.WriteLine("CClient.PlayCard()");
-            Console.WriteLine("CardCount3=" + deck.Count + "");
             Console.WriteLine("Your cards in your hand :");
-            if (deckRound != null)
             Task<int> task = new Task<int>(new Func<int>(() => RunDisplayList(deck)));
             Task<int> task2 = new Task<int>(new Func<int>(() => RunDisplayListRound(deckRound)));
             Task<int> task3 = new Task<int>(new Func<int>(() => RunCard(deck.Count)));
@@ -116,7 +110,7 @@ namespace CoincheClient.Network
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Exeception when display Deck: " + e.ToString());
+                    Console.WriteLine("Exception when display Deck: " + e.ToString());
                 }
                 ++i;
             }
