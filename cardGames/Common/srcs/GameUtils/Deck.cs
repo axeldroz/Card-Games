@@ -135,12 +135,19 @@ namespace Common.GameUtils
             return (c);
         }
 
+        private static Random rng = new Random();
         /// <summary>
         /// Mix the deck
         /// </summary>
-        public void mix()
+        public void Mix()
         {
-            /* we need a algo to mix cards */
+            for (var n = cards.Count; n > 1; --n)
+            {
+                int k = rng.Next(n + 1);
+                Card value = cards[k];
+                cards[k] = cards[n];
+                cards[n] = value;
+            }
         }
 
         /// <summary>
