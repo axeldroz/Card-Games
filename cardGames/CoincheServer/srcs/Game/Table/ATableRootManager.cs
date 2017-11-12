@@ -22,6 +22,7 @@ namespace CoincheServer.Game.Table
         protected int tourBet;
         protected int tourPlayingCard;
         protected bool betHasraised;
+        public int MaxBet { get; set; }
 
         public ATableRootManager(CServer _server)
         {
@@ -41,6 +42,7 @@ namespace CoincheServer.Game.Table
             tourBet = 0;
             tourPlayingCard = 0;
             betHasraised = false;
+            MaxBet = 180;
         }
 
         /// <summary>
@@ -67,7 +69,7 @@ namespace CoincheServer.Game.Table
 
         public Player NextPlayerBet(Player player)
         {
-            if (tourBet < 3 || !betHasraised || bet.points < 80)
+            if ((tourBet < 3 || !betHasraised || bet.points < 80) && bet.points < 180) // si bet est à 180 alors c'est le max donc on ferme les paris
             {
                 ++tourBet;
                 if (player == Team.First().Player.First())
