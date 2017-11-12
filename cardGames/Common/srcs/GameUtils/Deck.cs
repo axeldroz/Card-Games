@@ -54,13 +54,12 @@ namespace Common.GameUtils
             }
             Console.WriteLine("Number Of Cards : " + cards.Count);
         }
+        
 
         public void Clear()
         {
-            foreach (Card ca in cards)
-            {
-                cards.Remove(ca);
-            }
+            while (cards.Count > 0)
+                cards.RemoveAt(0);
         }
 
         public void ReGenerate()
