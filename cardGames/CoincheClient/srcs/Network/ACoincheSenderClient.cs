@@ -31,7 +31,7 @@ namespace CoincheClient.Network
                 Name = _name
             };
             NetworkComms.SendObject<Packet01LoginRequest>
-                ("LoginRequest", serverInfo.ip, serverInfo.port, pack);
+                ("LoginRequest", serverInfo.Ip, serverInfo.Port, pack);
         }
         public void SendWaitGameRequest()
         {
@@ -39,7 +39,7 @@ namespace CoincheClient.Network
             {
             };
             NetworkComms.SendObject<Packet03WaitGameRequest>
-                ("WaitGameRequest", serverInfo.ip, serverInfo.port, pack);
+                ("WaitGameRequest", serverInfo.Ip, serverInfo.Port, pack);
         }
 
         public void SendBetAnswer(Common.GameUtils.Bet _bet)
@@ -51,7 +51,7 @@ namespace CoincheClient.Network
             };
             Common.IO.OutputManager.Debug.DisplayVar("Bet.Points", pack.Bet.points + "");
             NetworkComms.SendObject<Packet05Bet>
-                ("BetAnswer", serverInfo.ip, serverInfo.port, pack);
+                ("BetAnswer", serverInfo.Ip, serverInfo.Port, pack);
             Common.IO.OutputManager.Debug.Display("ACoincheSenderClient", "SendBetAnswer() : sended !");
         } 
 
@@ -62,7 +62,7 @@ namespace CoincheClient.Network
                 CardId = cardId
             };
             NetworkComms.SendObject<Packet08CardId>
-                ("PlayingCardAnswer", serverInfo.ip, serverInfo.port, pack);
+                ("PlayingCardAnswer", serverInfo.Ip, serverInfo.Port, pack);
         }
     }
 }

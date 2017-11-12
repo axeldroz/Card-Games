@@ -8,7 +8,7 @@ namespace Common.NetworkUtils
 {
     public struct ServerInfo
     {
-        public string ip;
-        public int port;
+        public string Ip { get; set; }
+        public int Port { get; set; }
     }
 }

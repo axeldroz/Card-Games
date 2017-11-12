@@ -15,8 +15,8 @@ namespace CoincheClient.Network
         private NetworkListener nl;
         public ACoincheConnectionClient(string _ip, int _port)
         {
-            serverInfo.ip = _ip;
-            serverInfo.port = _port;
+            serverInfo.Ip = _ip;
+            serverInfo.Port = _port;
             clientInfo.name = "login";
         }
 
@@ -32,7 +32,7 @@ namespace CoincheClient.Network
             ping.Message = "PING";
             try
             {
-                NetworkComms.SendObject<Packet00Message>("Ping", serverInfo.ip, serverInfo.port, ping);
+                NetworkComms.SendObject<Packet00Message>("Ping", serverInfo.Ip, serverInfo.Port, ping);
             }
             catch(CommsException e)
             {

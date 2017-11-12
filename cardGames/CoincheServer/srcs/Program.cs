@@ -16,37 +16,33 @@ namespace CoincheServer
 {
     class Program
     {
-        /*static void Main(string[] args)
+        private static CServer GoConnectServer()
         {
-            //Trigger the method PrintIncomingMessage when a packet of type 'Message' is received
-            //We expect the incoming object to be a string which we state explicitly by using <string>
-            NetworkComms.AppendGlobalIncomingPacketHandler<Test>("Message", PrintIncomingMessage);
-            //Start listening for incoming connections
-            Connection.StartListening(ConnectionType.TCP, new System.Net.IPEndPoint(System.Net.IPAddress.Any, 0));
+            int port = 0;
+            CServer server = null;
+            port = Common.IO.InputManager.Client.GetNumber("Please enter server port: ", "Please enter a valid port",
+                new Common.IO.InputManager.Client.Between(4040, 50000));
+            try
+            {
+                server = new CServer("127.0.0.1", port);
 
-            //Print out the IPs and ports we are now listening on
-            Console.WriteLine("Server listening for TCP connection on:");
-            foreach (System.Net.IPEndPoint localEndPoint in Connection.ExistingLocalListenEndPoints(ConnectionType.TCP))
-                Console.WriteLine("{0}:{1}", localEndPoint.Address, localEndPoint.Port);
-
-            //Let the user close the server
-            Console.WriteLine("\nPress any key to close server.");
-            Console.ReadKey(true);
-
-            //We have used NetworkComms so we should ensure that we correctly call shutdown
-            NetworkComms.Shutdown();
-        }*/
-
-        /*private static void PrintIncomingMessage(PacketHeader header, Connection connection, Test message)
-        {
-            string str = header.PacketType.ToString();
-            Console.WriteLine(str);
-            Console.WriteLine("\nA message was received from " + connection.ToString() + " which said '" + message.msg + "'.");
-        }*/
+            }
+            catch (ConnectionSetupException ex)
+            {
+                Console.WriteLine("Can't create the server connection on port: " + port);
+                GoConnectServer();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception : " + ex.ToString());
+            }
+            Console.WriteLine("Server connection enabled, waiting for connections...");
+            return (server);
+        }
 
         static void Main(string[] args)
         {
-            CServer server = new CServer("127.0.0.1", 4242);
+            CServer server = GoConnectServer();
             server.Start();
             Common.IO.InputManager.Standard.WaitQuit();
             server.Stop();
