@@ -38,6 +38,7 @@ namespace CoincheServer.Game.Table
                 IsReady = true; // The game is ready
                 Console.WriteLine("Table with teams " + team.First().Name + " and " + team.Last().Name + " is about to start playing ...");
                 Deck.Generate();
+                Deck.Mix();
                 Deck.Distrib(team, 2);
                 var firstPlayer = team.First().Player.First();
                 bet = new Bet();

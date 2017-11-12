@@ -141,7 +141,7 @@ namespace Common.GameUtils
         /// </summary>
         public void Mix()
         {
-            for (var n = cards.Count; n > 1; --n)
+            for (var n = cards.Count - 1; n > 0; --n)
             {
                 int k = rng.Next(n + 1);
                 Card value = cards[k];
