@@ -39,7 +39,7 @@ namespace CoincheServer.Game.Table
                 Console.WriteLine("Table with teams " + team.First().Name + " and " + team.Last().Name + " is about to start playing ...");
                 Deck.Generate();
                 Deck.Mix();
-                Deck.Distrib(team, 2);
+                Deck.Distrib(team);
                 var firstPlayer = team.First().Player.First();
                 bet = new Bet();
                 server.AskBet(firstPlayer, bet);
@@ -81,7 +81,7 @@ namespace CoincheServer.Game.Table
                     DisplayScores();
                     bet = new Bet();
                     Deck.ReGenerate();
-                    Deck.Distrib(Team, 2);
+                    Deck.Distrib(Team);
                     server.AskBet(Team.First().Player.First(), bet);
                     // jeu finis et on compte les points
                 }

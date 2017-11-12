@@ -47,7 +47,10 @@ namespace CoincheClient.Network
         {
             Console.WriteLine("Première étape");
             Console.WriteLine("CardCount3=" + incomingObject.Cards.Count + "");
-            client.Bet(incomingObject.Bet, incomingObject.Cards);
+            if (incomingObject.Bet.Equals(null)  || incomingObject.Bet.points == 0)
+                client.Bet(new Common.GameUtils.Bet(), incomingObject.Cards);
+            else
+                client.Bet(incomingObject.Bet, incomingObject.Cards);
         }
         protected void WhenFirstBetRequest(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {

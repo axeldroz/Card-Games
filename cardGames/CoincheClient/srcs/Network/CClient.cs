@@ -36,22 +36,22 @@ namespace CoincheClient.Network
 
         public void Bet(Bet lastbet, List<Card> _cards)
         {
-            Console.WriteLine(lastbet.player.Name + " has bet " + lastbet.points + " on " + lastbet.suit);
-            Console.WriteLine("Your cards in your hand :");
-            Task<int> task = new Task<int>(new Func<int>( () => RunDisplayList(_cards)));
-
-            Task<int> task2 = null;
-            Task task3 = new Task<int>(new Func<int>(() => RunBet()));
-
-            task.Start();
-            Thread.Sleep(1000);
-            if (task2 != null)
+            try
             {
-                task2.Start();
+                if (lastbet.player != null)
+                    Console.WriteLine(lastbet.player.Name + " has bet " + lastbet.points + " on " + lastbet.suit);
+                Console.WriteLine("Your cards in your hand :");
+                Task<int> task = new Task<int>(new Func<int>(() => RunDisplayList(_cards)));
+                task.Start();
+                Thread.Sleep(200);
+                Task task3 = new Task<int>(new Func<int>(() => RunBet()));
+                task3.Start();
                 Thread.Sleep(200);
             }
-            task3.Start();
-            Thread.Sleep(200);
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception : " + e.ToString());
+            }
         }
         private int RunBet()
         {

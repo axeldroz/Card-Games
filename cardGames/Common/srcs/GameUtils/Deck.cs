@@ -17,20 +17,6 @@ namespace Common.GameUtils
             cards = new List<Card>();
         }
 
-        /// <summary>
-        /// Add all cards in deck
-        /// </summary>
-        public void init()
-        {
-            /*Card card = new Card();
-            card.suit = "Diamonds";
-            card.number = "Ace";
-            card.point = 20;
-            card.player = null;*/
-
-            //Card card = CreateCard()
-            //cards.Add(card);
-        }
 
         public void Generate()
         {
