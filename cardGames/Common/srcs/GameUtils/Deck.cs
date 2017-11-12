@@ -12,9 +12,6 @@ namespace Common.GameUtils
     {
         [ProtoMember(1)]
         public List<Card> cards { get; set; }
-        //public Card Cards { get; private set; }
-
-        //private string[] suit = {}
         public Deck()
         {
             cards = new List<Card>();

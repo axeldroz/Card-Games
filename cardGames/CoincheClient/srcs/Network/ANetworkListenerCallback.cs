@@ -46,7 +46,6 @@ namespace CoincheClient.Network
         }
         protected void WhenFirstBetRequest(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {
-            //client.Bet();
         }
         protected void WhenBetAccepted(PacketHeader packetHeader, Connection connection, Packet05Bet incomingObject)
         {
@@ -58,8 +57,6 @@ namespace CoincheClient.Network
             Console.WriteLine(pack.Descr);
             try
             {
-                if (pack.Deck2 != null)
-                    Common.IO.OutputManager.Debug.DisplayVar("CClientEvent : pack.Deck2.cards.Count", pack.Deck2.Count + "");
                 client.PlayCard(pack.Deck.cards, pack.Deck2);
             }
             catch(Exception e)
@@ -69,9 +66,7 @@ namespace CoincheClient.Network
         }
         protected void WhenShowCards(PacketHeader packetHeader, Connection connection, Packet07Deck pack)
         {
-            Common.IO.OutputManager.Debug.Display("ANetworkListenerCallback", "WhenShowCards");
             Console.WriteLine(pack.Descr);
-            Common.IO.OutputManager.Standard.Display.ListCard(pack.Deck.cards);
         }
 
         protected void WhenShowTeam(PacketHeader packetHeader, Connection connection, Packet09Team pack)

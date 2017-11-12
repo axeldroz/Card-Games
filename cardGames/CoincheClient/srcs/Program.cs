@@ -43,7 +43,6 @@ namespace CoincheClient
         {
             CClient client = GoConnect();
             client.Login();
-            //Common.IO.InputManager.Standard.WaitQuit();
             while (true) ;
             }
         }

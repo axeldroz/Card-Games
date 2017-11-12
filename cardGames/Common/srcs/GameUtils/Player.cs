@@ -22,7 +22,6 @@ namespace Common.GameUtils
         public bool HasPlay { get; set; }
         [ProtoMember(5)]
         public bool HasBet { get; set; }
-        /* gérer par TableManager */
         [ProtoMember(6)]
         public int Score { get; set; }
         //public int teamscore;
@@ -40,7 +39,6 @@ namespace Common.GameUtils
             Id = 0;
             Name = "";
             Score = 0;
-            //teamscore = 0;
             Status = 0;
             Deck = new Deck();
             Team = null;

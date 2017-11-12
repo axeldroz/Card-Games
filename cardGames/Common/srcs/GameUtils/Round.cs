@@ -55,7 +55,6 @@ namespace Common.GameUtils
                 if (cards.Count > 0)
                 {
                     cards.RemoveRange(0, cards.Count);
-                    IO.OutputManager.Debug.Display("/!\\ Cards reset for new round/plis.");
                 }
             }
             catch (Exception ex)
