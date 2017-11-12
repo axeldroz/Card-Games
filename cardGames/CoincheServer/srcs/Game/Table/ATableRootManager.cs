@@ -20,6 +20,7 @@ namespace CoincheServer.Game.Table
         protected bool isReady;
         protected CServer server;
         protected int tourBet;
+        protected int tourPlayingCard;
         protected bool betHasraised;
 
         public ATableRootManager(CServer _server)
@@ -38,6 +39,7 @@ namespace CoincheServer.Game.Table
                 suit = "diamond"
             };
             tourBet = 0;
+            tourPlayingCard = 0;
             betHasraised = false;
         }
 
@@ -76,9 +78,29 @@ namespace CoincheServer.Game.Table
                     return (Team.Last().Player.Last());
                 if (player == Team.Last().Player.Last())
                     return (Team.First().Player.First());
+
             }
             return (null);
         }
+
+        public Player NextPlayerPlayingCard(Player player)
+        {
+            if (tourPlayingCard < 3 || !betHasraised || bet.points < 80)
+            {
+                ++tourPlayingCard;
+                if (player == Team.First().Player.First())
+                    return (Team.Last().Player.First());
+                if (player == Team.Last().Player.First())
+                    return (Team.First().Player.Last());
+                if (player == Team.First().Player.Last())
+                    return (Team.Last().Player.Last());
+                if (player == Team.Last().Player.Last())
+                    return (Team.First().Player.First());
+
+            }
+            return (null);
+        }
+
 
         /// <summary>
         /// Check a team that is not full yet.

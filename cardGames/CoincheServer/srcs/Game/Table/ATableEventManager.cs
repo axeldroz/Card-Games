@@ -69,13 +69,14 @@ namespace CoincheServer.Game.Table
         public void EventCardAdded(Player player)
         {
             Common.IO.OutputManager.Debug.Display("ARoomEventManager", "EventCardAdded() : called");
-            Player nextPlayer = NextPlayer(player);
+            Player nextPlayer = NextPlayerPlayingCard(player);
             Common.IO.OutputManager.Debug.DisplayVar("nextPlayer is null", nextPlayer == null);
             if (nextPlayer != null)
                 server.AskPlayCard(nextPlayer, RoundDeck);
             else
             {
                 //Player firstPlayer = team.First().Player.First();
+                tourPlayingCard = 0;
                 Player firstPlayer = RoundDeck.AddPointToTeams();
                 RoundDeck.ClearTable();
                 if (firstPlayer != null && firstPlayer.Deck.cards.Count > 0)

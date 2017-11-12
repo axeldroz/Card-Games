@@ -42,7 +42,7 @@ namespace Common.IO
                 public static int LastBet2(Common.GameUtils.Bet bet)
                 {
                     Console.Write("Last Bet : ");
-                    Console.WriteLine(bet.player.Name + " has bet" + bet.points
+                    Console.WriteLine(bet.player.Name + " has bet " + bet.points
                         + " on " + bet.suit);
 
                     return (0);
