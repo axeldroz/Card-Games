@@ -34,7 +34,8 @@ namespace CoincheClient
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception : " + ex.ToString());
+                //Console.WriteLine("Exception : " + ex.ToString());
+                GoConnect();
             }
             return (client);
         }
@@ -42,7 +43,7 @@ namespace CoincheClient
         static void Main(string[] args)
         {
             CClient client = GoConnect();
-            client.Login();
+            //client.Login();
             while (true) ;
             }
         }
