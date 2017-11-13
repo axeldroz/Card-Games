@@ -1,4 +1,7 @@
-﻿using CoincheServer.Network;
+﻿/*
+ * Created by Axel Drozdzynski and Simon Brami on 11/06/2017
+ */
+using CoincheServer.Network;
 using Common.GameUtils;
 using System;
 using System.Collections.Generic;

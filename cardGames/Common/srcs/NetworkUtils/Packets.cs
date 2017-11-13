@@ -1,4 +1,7 @@
-﻿using Common.GameUtils;
+﻿/*
+ * Created by Axel Drozdzynski and Simon Brami on 11/06/2017
+ */
+using Common.GameUtils;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;

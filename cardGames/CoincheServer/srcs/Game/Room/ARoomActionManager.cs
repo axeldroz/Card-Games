@@ -1,4 +1,7 @@
-﻿using Common.GameUtils;
+﻿/*
+ * Created by Axel Drozdzynski on 11/06/2017
+ */
+using Common.GameUtils;
 using System;
 using System.Collections.Generic;
 using System.Linq;

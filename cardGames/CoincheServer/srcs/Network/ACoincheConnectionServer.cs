@@ -1,4 +1,7 @@
-﻿using Common.NetworkUtils;
+﻿/*
+ * Created by Axel Drozdzynski on 11/06/2017
+ */
+using Common.NetworkUtils;
 using Common.NetworkUtils.Packets;
 using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;

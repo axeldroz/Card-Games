@@ -1,5 +1,0 @@
-C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheClient\bin\Debug\CoincheClient.exe
-C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheClient\bin\Debug\Common.exe
-C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheClient\bin\Debug\NetworkCommsDotNet.dll
-C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheClient\bin\Debug\protobuf-net.dll
-C:\Users\49207\Documents\Epitech-Rendu\DOT_cardGames_2017\cardGames\CoincheClient\bin\Debug\ProtobufSerializer.dll

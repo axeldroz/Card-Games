@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="srcs\EntryPointClient.cs" />
     <Compile Include="srcs\GameManagerClient.cs" />
     <Compile Include="srcs\Network\ACoincheConnectionClient.cs" />
     <Compile Include="srcs\Network\ACoincheSenderClient.cs" />

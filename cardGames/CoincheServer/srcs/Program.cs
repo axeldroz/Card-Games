@@ -1,4 +1,7 @@
-﻿using Common;
+﻿/*
+ * Created by Simon Brami on 11/06/2017
+ */
+using Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,7 @@
-﻿using NetworkCommsDotNet;
+﻿/*
+ * Created by Axel Drozdzynski and Simon Brami on 11/06/2017
+ */ 
+using NetworkCommsDotNet;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;
